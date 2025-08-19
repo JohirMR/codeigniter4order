@@ -8,19 +8,24 @@
   <title>Document</title>
 </head>
 <body>
- <div class="container">
+ <div class="container mt-4 py-4">
   <div class="row">
     <div class="col-md-12">
-        <form>
+        <form  method="post" action="" id="orderForm" >
+
+
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <label for="name" class="form-label">নাম</label>
+            <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="mobile" class="form-label">মোবাইল</label>
+            <input type="number" name="mobile"  class="form-control" id="mobile">
           </div>
+          <div class="mb-3">
+            <label for="address" class="form-label">ঠিকানা : যে ঠিকানায় কুরিয়ার নিতে চান</label>
+              <textarea class="form-control" name="address" id="address" rows="5"></textarea>
+           </div>
           <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
