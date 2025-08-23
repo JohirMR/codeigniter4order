@@ -19,7 +19,7 @@ public function up()
         'updated_at' => ['type'=>'DATETIME','null'=>true],
     ]);
     $this->forge->addKey('id', true);
-    $this->forge->addForeignKey('class_id', 'classes', 'id', 'CASCADE', 'CASCADE');
+    $this->forge->addForeignKey('class_id', 'classes', 'name', 'CASCADE', 'CASCADE');
 
     $this->forge->createTable('books');
 }

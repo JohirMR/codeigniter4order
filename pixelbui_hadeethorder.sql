@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2025 at 06:42 PM
+-- Generation Time: Aug 23, 2025 at 09:09 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.1.25
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,12 +31,28 @@ CREATE TABLE `books` (
   `id` int(11) NOT NULL,
   `class_id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
+  `class_name` varchar(50) DEFAULT NULL,
   `slug` varchar(100) NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `books`
+--
+
+INSERT INTO `books` (`id`, `class_id`, `name`, `class_name`, `slug`, `price`, `image`, `created_at`, `updated_at`) VALUES
+(10, 2, 'আরবী বর্ণমালা', 'নার্সারী শ্রেণী', 'arobi_bornomala', 50.00, 'uploads/books/arobi_bornomala.jpg', NULL, NULL),
+(11, 2, 'বাংলা বর্ণমালা', 'নার্সারী শ্রেণী', 'bangla_bornomala', 50.00, 'uploads/books/bangla_bornomala.jpg', NULL, NULL),
+(12, 2, 'ইংরেজি বর্ণমালা', 'নার্সারী শ্রেণী', 'english', 50.00, 'uploads/books/english.jpg', NULL, NULL),
+(13, 2, 'গণিত শিক্ষা', 'নার্সারী শ্রেণী', 'math', 50.00, 'uploads/books/math.jpg', NULL, NULL),
+(14, 2, 'শিশুর দ্বীনিয়াত', 'শিশু শ্রেণী', 'Shishu_Diniyet', 45.00, 'uploads/books/Shishu_Diniyet.jpg', NULL, NULL),
+(15, 2, 'শিশুর আরবী', 'শিশু শ্রেণী', 'Shishu_Arabic', 50.00, 'uploads/books/Shishu_Arabic.jpg', NULL, NULL),
+(16, 2, 'শিশুর বাংলা', 'শিশু শ্রেণী', 'Shishu_Bangla', 80.00, 'uploads/books/Shishu_Bangla.jpg', NULL, NULL),
+(17, 2, 'শিশুর ইংরেজী', 'শিশু শ্রেণী', 'Shishu_Enlish', 55.00, 'uploads/books/Shishu_Enlish.jpg', NULL, NULL),
+(18, 2, 'শিশুর গণিত', 'শিশু শ্রেণী', 'Shishu_math', 50.00, 'uploads/books/Shishu_math.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -167,7 +183,7 @@ ALTER TABLE `order_items`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `classes`

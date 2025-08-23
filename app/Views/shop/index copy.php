@@ -13,50 +13,33 @@
 <div class="container py-4">
   <h2 class="mb-4">নার্সারী থেকে অষ্টম শ্রেণি — বই অর্ডার</h2>
 
-  <form method="post" action="<?= site_url('order/submit') ?>" id="orderForm">
+  <?php if(session()->getFlashdata('error')): ?>
+    <div class="alert alert-danger"><?= esc(session()->getFlashdata('error')) ?></div>
+  <?php endif; ?>
 
-    <?php 
-      $currentClass = '';
-      foreach($books as $b): 
-        if($currentClass != $b['class_name']): 
-          // নতুন শ্রেণী শুরু হলে শিরোনাম দেখানো
-          if($currentClass != '') echo "</div>"; 
-          $currentClass = $b['class_name'];
-    ?>
-        <h3 class="mt-4"><?= esc($currentClass) ?></h3>
-        <div class="row g-3">
-    <?php endif; ?>
-      
+  <form method="post" action="<?= site_url('order/submit') ?>" id="orderForm">
+    <div class="row g-3">
+      <?php foreach($books as $b): ?>
         <div class="col-md-6">
           <div class="card p-3 h-100">
             <div class="d-flex justify-content-between">
               <div>
                 <img src="<?= site_url( esc($b['image'])) ?>" alt="">
                 <h5 class="mb-1"><?= esc($b['name']) ?></h5>
-                <div>মূল্য: 
-                  <strong class="base" data-price="<?= $b['price'] ?>">
-                    <?= number_format($b['price'],2) ?>
-                  </strong> টাকা
-                </div>
+                <div>মূল্য: <strong class="base" data-price="<?= $b['price'] ?>"><?= number_format($b['price'],2) ?></strong> টাকা</div>
                 <small class="text-muted">৫ বা তার বেশি কপি নিলে ২০% ছাড়।</small>
+                
               </div>
               <div style="min-width:150px">
                 <label class="form-label mb-0">কয় কপি?</label>
-                <input type="number" min="0" value="0" class="form-control qty" 
-                  name="items[<?= $b['id'] ?>]">
+                <input type="number" min="0" value="0" class="form-control qty" name="items[<?= $b['id'] ?>]">
                 <div class="mt-2">সাবটোটাল: <span class="line-sub">0.00</span></div>
               </div>
             </div>
           </div>
         </div>
-
-    <?php endforeach; ?>
-    </div> <!-- শেষ শ্রেণীর row close -->
-    
-    <button type="submit" class="btn btn-primary mt-4">অর্ডার কনফার্ম</button>
-  </form>
-</div>
-
+      <?php endforeach; ?>
+    </div>
 
     <div class="card p-3 mt-4">
       <div class="row g-3">
