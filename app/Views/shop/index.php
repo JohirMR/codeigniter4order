@@ -24,9 +24,10 @@
           <div class="card p-3 h-100">
             <div class="d-flex justify-content-between">
               <div>
-                <h5 class="mb-1"><?= esc($b['title']) ?></h5>
-                <div>মূল্য: <strong class="base" data-price="<?= $b['base_price'] ?>"><?= number_format($b['base_price'],2) ?></strong> টাকা</div>
+                <h5 class="mb-1"><?= esc($b['name']) ?></h5>
+                <div>মূল্য: <strong class="base" data-price="<?= $b['price'] ?>"><?= number_format($b['price'],2) ?></strong> টাকা</div>
                 <small class="text-muted">৫ বা তার বেশি কপি নিলে ২০% ছাড়।</small>
+                
               </div>
               <div style="min-width:150px">
                 <label class="form-label mb-0">কয় কপি?</label>
@@ -47,9 +48,13 @@
         </div>
         <div class="col-md-4">
           <label class="form-label">ইমেইল</label>
-          <input type="email" name="customer_email" class="form-control" required>
+          <input type="text" name="customer_mobile" class="form-control" placeholder="01XXXXXXXXX" required>
         </div>
-        <div class="col-md-4 d-flex align-items-end">
+        <div class="col-md-4">
+          <label class="form-label">ইমেইল</label>
+            <textarea name="customer_address" required></textarea>       
+           </div>
+        <div class="col-md-12 d-flex align-items-end">
           <div class="ms-auto">
             <div class="h5 mb-1">মোট বই: <span id="totalQty">0</span></div>
             <div class="h4">মোট মূল্য: <span id="totalAmount">0.00</span> টাকা</div>
