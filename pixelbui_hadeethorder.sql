@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 24, 2025 at 03:36 PM
+-- Generation Time: Aug 24, 2025 at 08:33 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.1.25
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -114,28 +114,48 @@ INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`
 
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
-  `customer_name` varchar(100) DEFAULT NULL,
-  `customer_mobile` varchar(20) DEFAULT NULL,
-  `customer_address` text DEFAULT NULL,
+  `customer_name` varchar(100) NOT NULL,
+  `customer_mobile` varchar(20) NOT NULL,
+  `customer_address` text NOT NULL,
+  `class_name` varchar(50) NOT NULL,
+  `book_name` varchar(200) NOT NULL,
+  `qty` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `order_items`
+-- Dumping data for table `orders`
 --
 
-CREATE TABLE `order_items` (
-  `id` int(11) NOT NULL,
-  `order_id` int(11) DEFAULT NULL,
-  `book_id` int(11) DEFAULT NULL,
-  `class_name` varchar(50) DEFAULT NULL,
-  `book_name` varchar(200) DEFAULT NULL,
-  `qty` int(11) DEFAULT NULL,
-  `unit_price` decimal(10,2) DEFAULT NULL,
-  `subtotal` decimal(10,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `orders` (`id`, `customer_name`, `customer_mobile`, `customer_address`, `class_name`, `book_name`, `qty`, `created_at`) VALUES
+(1, 'ghghghgh', 'sdsdsd', 'sdsdsd', 'শিশু শ্রেণী', 'শিশুর দ্বীনিয়াত', 1, '2025-08-24 16:59:32'),
+(2, 'ghghghgh', '89889898', 'etrrrtrtrtr', 'নার্সারী শ্রেণী', 'আরবী বর্ণমালা', 36, '2025-08-24 17:01:26'),
+(3, 'ghghghgh', '89889898', 'etrrrtrtrtr', 'নার্সারী শ্রেণী', 'বাংলা বর্ণমালা', 14, '2025-08-24 17:01:26'),
+(4, 'ghghghgh', '89889898', 'etrrrtrtrtr', 'শিশু শ্রেণী', 'শিশুর দ্বীনিয়াত', 2, '2025-08-24 17:01:26'),
+(5, 'ghghghgh', '89889898', 'etrrrtrtrtr', 'শিশু শ্রেণী', 'শিশুর আরবী', 10, '2025-08-24 17:01:26'),
+(6, 'ghghghgh', '89889898', 'etrrrtrtrtr', 'শিশু শ্রেণী', 'শিশুর গণিত', 87, '2025-08-24 17:01:26'),
+(7, 'জহিরুল ইসলাম', '01789616442', 'রাজশাহী', 'শিশু শ্রেণী', 'শিশুর বাংলা', 5, '2025-08-24 17:44:51'),
+(8, 'জহিরুল ইসলাম', '01789616442', 'রাজশাহী', 'শিশু শ্রেণী', 'শিশুর ইংরেজী', 6, '2025-08-24 17:44:51'),
+(9, 'জহিরুল ইসলাম', '01789616442', 'রাজশাহী', 'শিশু শ্রেণী', 'শিশুর গণিত', 5, '2025-08-24 17:44:51'),
+(10, 'জহিরুল ইসলাম', '01789616442', 'রাজশাহী', 'নার্সারী শ্রেণী', 'ইংরেজি বর্ণমালা', 1, '2025-08-24 17:47:51'),
+(11, 'জহিরুল ইসলাম', '01789616442', 'রাজশাহী', 'শিশু শ্রেণী', 'শিশুর বাংলা', 5, '2025-08-24 17:47:51'),
+(12, 'জহিরুল ইসলাম', '01789616442', 'রাজশাহী', 'শিশু শ্রেণী', 'শিশুর ইংরেজী', 6, '2025-08-24 17:47:51'),
+(13, 'জহিরুল ইসলাম', '01789616442', 'রাজশাহী', 'শিশু শ্রেণী', 'শিশুর গণিত', 5, '2025-08-24 17:47:51'),
+(14, 'জহিরুল ইসলাম', '01789616442', 'রাজশাহী', 'নার্সারী শ্রেণী', 'ইংরেজি বর্ণমালা', 1, '2025-08-24 17:54:09'),
+(15, 'জহিরুল ইসলাম', '01789616442', 'রাজশাহী', 'শিশু শ্রেণী', 'শিশুর বাংলা', 5, '2025-08-24 17:54:09'),
+(16, 'জহিরুল ইসলাম', '01789616442', 'রাজশাহী', 'শিশু শ্রেণী', 'শিশুর ইংরেজী', 6, '2025-08-24 17:54:09'),
+(17, 'জহিরুল ইসলাম', '01789616442', 'রাজশাহী', 'শিশু শ্রেণী', 'শিশুর গণিত', 5, '2025-08-24 17:54:09'),
+(18, 'জহিরুল ইসলাম', '01789616442', 'রাজশাহী', 'নার্সারী শ্রেণী', 'ইংরেজি বর্ণমালা', 1, '2025-08-24 17:54:20'),
+(19, 'জহিরুল ইসলাম', '01789616442', 'রাজশাহী', 'শিশু শ্রেণী', 'শিশুর বাংলা', 5, '2025-08-24 17:54:20'),
+(20, 'জহিরুল ইসলাম', '01789616442', 'রাজশাহী', 'শিশু শ্রেণী', 'শিশুর ইংরেজী', 6, '2025-08-24 17:54:20'),
+(21, 'জহিরুল ইসলাম', '01789616442', 'রাজশাহী', 'শিশু শ্রেণী', 'শিশুর গণিত', 5, '2025-08-24 17:54:20'),
+(22, 'জহিরুল ইসলাম', '89889898', 'vvhbmnbvhcgxfdfcvb ', 'শিশু শ্রেণী', 'শিশুর গণিত', 5, '2025-08-24 18:04:15'),
+(23, 'জহিরুল ইসলাম', '89889898', 'vvhbmnbvhcgxfdfcvb ', 'শিশু শ্রেণী', 'শিশুর গণিত', 5, '2025-08-24 18:13:39'),
+(24, 'জহিরুল ইসলাম', '89889898', 'vvhbmnbvhcgxfdfcvb ', 'শিশু শ্রেণী', 'শিশুর গণিত', 5, '2025-08-24 18:15:27'),
+(25, 'জহিরুল ইসলাম', '89889898', 'vvhbmnbvhcgxfdfcvb ', 'শিশু শ্রেণী', 'শিশুর গণিত', 5, '2025-08-24 18:22:52'),
+(26, 'জহিরুল ইসলাম', '89889898', 'vvhbmnbvhcgxfdfcvb ', 'শিশু শ্রেণী', 'শিশুর গণিত', 5, '2025-08-24 18:25:37'),
+(27, 'জহিরুল ইসলাম', '89889898', 'vvhbmnbvhcgxfdfcvb ', 'শিশু শ্রেণী', 'শিশুর গণিত', 5, '2025-08-24 18:25:48'),
+(28, 'জহিরুল ইসলাম', '89889898', 'fdfdf', 'শিশু শ্রেণী', 'শিশুর বাংলা', 4, '2025-08-24 18:28:54');
 
 --
 -- Indexes for dumped tables
@@ -168,13 +188,6 @@ ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `order_items`
---
-ALTER TABLE `order_items`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `order_id` (`order_id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -200,13 +213,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `order_items`
---
-ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- Constraints for dumped tables
@@ -217,12 +224,6 @@ ALTER TABLE `order_items`
 --
 ALTER TABLE `books`
   ADD CONSTRAINT `books_class_id_foreign` FOREIGN KEY (`class_id`) REFERENCES `classes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `order_items`
---
-ALTER TABLE `order_items`
-  ADD CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
