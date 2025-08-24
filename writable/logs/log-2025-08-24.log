@@ -1089,3 +1089,788 @@ in APPPATH\Views\admin\books.php on line 11.
 10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+CRITICAL - 2025-08-24 16:38:41 --> ErrorException: Undefined array key "title"
+[Method: GET, Route: admin/books]
+in APPPATH\Views\admin\books.php on line 11.
+ 1 APPPATH\Views\admin\books.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "title"', 'C:\\xampp\\htdocs\\codeigniter4order\\app\\Views\\admin\\books.php', 11)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\codeigniter4order\\app\\Views\\admin\\books.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/books', [], true)
+ 5 APPPATH\Controllers\Admin\Books.php(15): view('admin/books', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Books->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Books))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+ERROR - 2025-08-24 17:44:56 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-24 17:44:56 --> 220 smtp.gmail.com ESMTP d9443c01a7336-2466886456csm47105905ad.72 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2466886456csm47105905ad.72 - gsmtp
+
+CRITICAL - 2025-08-24 17:44:56 --> TypeError: implode(): Argument #2 ($array) must be of type ?array, string given
+[Method: POST, Route: order/submit]
+in APPPATH\Controllers\ShopController.php on line 110.
+ 1 APPPATH\Controllers\ShopController.php(110): implode(', ', '220 smtp.gmail.com ESMTP d9443c01a7336-2466886456csm47105905ad.72 - gsmtp
+<br><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre><pre>starttls: 220 2.0.0 Ready to start TLS
+</pre><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre>Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2466886456csm47105905ad.72 - gsmtp
+<br>Unable to send email using SMTP. Your server might not be configured to send mail using this method.<br><pre>Date: Sun, 24 Aug 2025 17:44:51 +0000
+From: &quot;Your Shop Name&quot; &lt;johir@pixelbuildbd.com&gt;
+Return-Path: &lt;johir@pixelbuildbd.com&gt;
+To: johirulislam6442@gmail.com
+Subject: =?UTF-8?Q?New=20Order=20Received?=
+Reply-To: &lt;johir@pixelbuildbd.com&gt;
+User-Agent: CodeIgniter
+X-Sender: johir@pixelbuildbd.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;68ab4f9366e6e6.95072221@pixelbuildbd.com&gt;
+Mime-Version: 1.0
+
+</pre>')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+ERROR - 2025-08-24 17:47:56 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-24 17:47:56 --> 220 smtp.gmail.com ESMTP 98e67ed59e1d1-3254af5f9c7sm4861335a91.23 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-3254af5f9c7sm4861335a91.23 - gsmtp
+
+CRITICAL - 2025-08-24 17:47:56 --> TypeError: implode(): Argument #2 ($array) must be of type ?array, string given
+[Method: POST, Route: order/submit]
+in APPPATH\Controllers\ShopController.php on line 110.
+ 1 APPPATH\Controllers\ShopController.php(110): implode(', ', '220 smtp.gmail.com ESMTP 98e67ed59e1d1-3254af5f9c7sm4861335a91.23 - gsmtp
+<br><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre><pre>starttls: 220 2.0.0 Ready to start TLS
+</pre><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre>Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-3254af5f9c7sm4861335a91.23 - gsmtp
+<br>Unable to send email using SMTP. Your server might not be configured to send mail using this method.<br><pre>Date: Sun, 24 Aug 2025 17:47:51 +0000
+From: &quot;Your Shop Name&quot; &lt;johir@pixelbuildbd.com&gt;
+Return-Path: &lt;johir@pixelbuildbd.com&gt;
+To: johirulislam6442@gmail.com
+Subject: =?UTF-8?Q?New=20Order=20Received?=
+Reply-To: &lt;johir@pixelbuildbd.com&gt;
+User-Agent: CodeIgniter
+X-Sender: johir@pixelbuildbd.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;68ab5047943445.73334085@pixelbuildbd.com&gt;
+Mime-Version: 1.0
+
+</pre>')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+ERROR - 2025-08-24 17:54:14 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-24 17:54:14 --> 220 smtp.gmail.com ESMTP 41be03b00d2f7-b49cbb7b375sm4671100a12.29 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-b49cbb7b375sm4671100a12.29 - gsmtp
+
+CRITICAL - 2025-08-24 17:54:14 --> TypeError: implode(): Argument #2 ($array) must be of type ?array, string given
+[Method: POST, Route: order/submit]
+in APPPATH\Controllers\ShopController.php on line 110.
+ 1 APPPATH\Controllers\ShopController.php(110): implode(', ', '220 smtp.gmail.com ESMTP 41be03b00d2f7-b49cbb7b375sm4671100a12.29 - gsmtp
+<br><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre><pre>starttls: 220 2.0.0 Ready to start TLS
+</pre><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre>Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-b49cbb7b375sm4671100a12.29 - gsmtp
+<br>Unable to send email using SMTP. Your server might not be configured to send mail using this method.<br><pre>Date: Sun, 24 Aug 2025 17:54:09 +0000
+From: &quot;Your Shop Name&quot; &lt;johirulislam2966@gmail.com&gt;
+Return-Path: &lt;johirulislam2966@gmail.com&gt;
+To: johirulislam6442@gmail.com
+Subject: =?UTF-8?Q?New=20Order=20Received?=
+Reply-To: &lt;johirulislam2966@gmail.com&gt;
+User-Agent: CodeIgniter
+X-Sender: johirulislam2966@gmail.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;68ab51c132bb99.02706273@gmail.com&gt;
+Mime-Version: 1.0
+
+</pre>')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+ERROR - 2025-08-24 17:54:25 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-24 17:54:25 --> 220 smtp.gmail.com ESMTP d9443c01a7336-24668880a99sm47040735ad.121 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-24668880a99sm47040735ad.121 - gsmtp
+
+CRITICAL - 2025-08-24 17:54:25 --> TypeError: implode(): Argument #2 ($array) must be of type ?array, string given
+[Method: POST, Route: order/submit]
+in APPPATH\Controllers\ShopController.php on line 110.
+ 1 APPPATH\Controllers\ShopController.php(110): implode(', ', '220 smtp.gmail.com ESMTP d9443c01a7336-24668880a99sm47040735ad.121 - gsmtp
+<br><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre><pre>starttls: 220 2.0.0 Ready to start TLS
+</pre><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre>Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-24668880a99sm47040735ad.121 - gsmtp
+<br>Unable to send email using SMTP. Your server might not be configured to send mail using this method.<br><pre>Date: Sun, 24 Aug 2025 17:54:21 +0000
+From: &quot;Your Shop Name&quot; &lt;johirulislam2966@gmail.com&gt;
+Return-Path: &lt;johirulislam2966@gmail.com&gt;
+To: johirulislam6442@gmail.com
+Subject: =?UTF-8?Q?New=20Order=20Received?=
+Reply-To: &lt;johirulislam2966@gmail.com&gt;
+User-Agent: CodeIgniter
+X-Sender: johirulislam2966@gmail.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;68ab51cd01a2b1.55953361@gmail.com&gt;
+Mime-Version: 1.0
+
+</pre>')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+ERROR - 2025-08-24 18:04:20 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-24 18:04:20 --> 220 smtp.gmail.com ESMTP d2e1a72fcca58-7704821293asm4155448b3a.15 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-7704821293asm4155448b3a.15 - gsmtp
+
+CRITICAL - 2025-08-24 18:04:20 --> TypeError: implode(): Argument #2 ($array) must be of type ?array, string given
+[Method: POST, Route: order/submit]
+in APPPATH\Controllers\ShopController.php on line 110.
+ 1 APPPATH\Controllers\ShopController.php(110): implode(', ', '220 smtp.gmail.com ESMTP d2e1a72fcca58-7704821293asm4155448b3a.15 - gsmtp
+<br><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre><pre>starttls: 220 2.0.0 Ready to start TLS
+</pre><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre>Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-7704821293asm4155448b3a.15 - gsmtp
+<br>Unable to send email using SMTP. Your server might not be configured to send mail using this method.<br><pre>Date: Sun, 24 Aug 2025 18:04:15 +0000
+From: &quot;Your Shop Name&quot; &lt;johirulislam2966@gmail.com&gt;
+Return-Path: &lt;johirulislam2966@gmail.com&gt;
+To: johirulislam6442@gmail.com
+Subject: =?UTF-8?Q?New=20Order=20Received?=
+Reply-To: &lt;johirulislam2966@gmail.com&gt;
+User-Agent: CodeIgniter
+X-Sender: johirulislam2966@gmail.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;68ab541f93b7a8.21723015@gmail.com&gt;
+Mime-Version: 1.0
+
+</pre>')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+ERROR - 2025-08-24 18:13:43 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-24 18:13:43 --> 220 smtp.gmail.com ESMTP d2e1a72fcca58-77059928c5asm1759159b3a.1 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-77059928c5asm1759159b3a.1 - gsmtp
+
+CRITICAL - 2025-08-24 18:13:43 --> TypeError: implode(): Argument #2 ($array) must be of type ?array, string given
+[Method: POST, Route: order/submit]
+in APPPATH\Controllers\ShopController.php on line 110.
+ 1 APPPATH\Controllers\ShopController.php(110): implode(', ', '220 smtp.gmail.com ESMTP d2e1a72fcca58-77059928c5asm1759159b3a.1 - gsmtp
+<br><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre><pre>starttls: 220 2.0.0 Ready to start TLS
+</pre><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre>Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-77059928c5asm1759159b3a.1 - gsmtp
+<br>Unable to send email using SMTP. Your server might not be configured to send mail using this method.<br><pre>Date: Sun, 24 Aug 2025 18:13:39 +0000
+From: &quot;Your Shop Name&quot; &lt;johirulislam2966@gmail.com&gt;
+Return-Path: &lt;johirulislam2966@gmail.com&gt;
+To: johirulislam6442@gmail.com
+Subject: =?UTF-8?Q?New=20Order=20Received?=
+Reply-To: &lt;johirulislam2966@gmail.com&gt;
+User-Agent: CodeIgniter
+X-Sender: johirulislam2966@gmail.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;68ab5653737a43.69991335@gmail.com&gt;
+Mime-Version: 1.0
+
+</pre>')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+ERROR - 2025-08-24 18:15:32 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-24 18:15:32 --> 220 smtp.gmail.com ESMTP 41be03b00d2f7-b49cbbbaffdsm4697960a12.51 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-b49cbbbaffdsm4697960a12.51 - gsmtp
+
+CRITICAL - 2025-08-24 18:15:32 --> TypeError: implode(): Argument #2 ($array) must be of type ?array, string given
+[Method: POST, Route: order/submit]
+in APPPATH\Controllers\ShopController.php on line 110.
+ 1 APPPATH\Controllers\ShopController.php(110): implode(', ', '220 smtp.gmail.com ESMTP 41be03b00d2f7-b49cbbbaffdsm4697960a12.51 - gsmtp
+<br><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre><pre>starttls: 220 2.0.0 Ready to start TLS
+</pre><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre>Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-b49cbbbaffdsm4697960a12.51 - gsmtp
+<br>Unable to send email using SMTP. Your server might not be configured to send mail using this method.<br><pre>Date: Sun, 24 Aug 2025 18:15:27 +0000
+From: &quot;Your Shop Name&quot; &lt;johirulislam2966@gmail.com&gt;
+Return-Path: &lt;johirulislam2966@gmail.com&gt;
+To: johirulislam6442@gmail.com
+Subject: =?UTF-8?Q?New=20Order=20Received?=
+Reply-To: &lt;johirulislam2966@gmail.com&gt;
+User-Agent: CodeIgniter
+X-Sender: johirulislam2966@gmail.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;68ab56bf823788.37882681@gmail.com&gt;
+Mime-Version: 1.0
+
+</pre>')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+ERROR - 2025-08-24 18:22:56 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-24 18:22:56 --> 220 smtp.gmail.com ESMTP d9443c01a7336-2466877a06esm47940055ad.31 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.79]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.79]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2466877a06esm47940055ad.31 - gsmtp
+
+CRITICAL - 2025-08-24 18:22:56 --> TypeError: implode(): Argument #2 ($array) must be of type ?array, string given
+[Method: POST, Route: order/submit]
+in APPPATH\Controllers\ShopController.php on line 110.
+ 1 APPPATH\Controllers\ShopController.php(110): implode(', ', '220 smtp.gmail.com ESMTP d9443c01a7336-2466877a06esm47940055ad.31 - gsmtp
+<br><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.79]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre><pre>starttls: 220 2.0.0 Ready to start TLS
+</pre><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.79]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre>Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2466877a06esm47940055ad.31 - gsmtp
+<br>Unable to send email using SMTP. Your server might not be configured to send mail using this method.<br><pre>Date: Sun, 24 Aug 2025 18:22:52 +0000
+From: &quot;Your Shop Name&quot; &lt;johirulislam2966@gmail.com&gt;
+Return-Path: &lt;johirulislam2966@gmail.com&gt;
+To: johirulislam6442@gmail.com
+Subject: =?UTF-8?Q?New=20Order=20Received?=
+Reply-To: &lt;johirulislam2966@gmail.com&gt;
+User-Agent: CodeIgniter
+X-Sender: johirulislam2966@gmail.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;68ab587c9b3bb5.32613522@gmail.com&gt;
+Mime-Version: 1.0
+
+</pre>')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+ERROR - 2025-08-24 18:25:41 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-24 18:25:41 --> 220 smtp.gmail.com ESMTP 98e67ed59e1d1-324f80d4de6sm5554781a91.2 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.79]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.79]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-324f80d4de6sm5554781a91.2 - gsmtp
+
+CRITICAL - 2025-08-24 18:25:41 --> TypeError: implode(): Argument #2 ($array) must be of type ?array, string given
+[Method: POST, Route: order/submit]
+in APPPATH\Controllers\ShopController.php on line 110.
+ 1 APPPATH\Controllers\ShopController.php(110): implode(', ', '220 smtp.gmail.com ESMTP 98e67ed59e1d1-324f80d4de6sm5554781a91.2 - gsmtp
+<br><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.79]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre><pre>starttls: 220 2.0.0 Ready to start TLS
+</pre><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.79]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre>Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-324f80d4de6sm5554781a91.2 - gsmtp
+<br>Unable to send email using SMTP. Your server might not be configured to send mail using this method.<br><pre>Date: Sun, 24 Aug 2025 18:25:37 +0000
+From: &quot;Your Shop Name&quot; &lt;johirulislam2966@gmail.com&gt;
+Return-Path: &lt;johirulislam2966@gmail.com&gt;
+To: johirulislam6442@gmail.com
+Subject: =?UTF-8?Q?New=20Order=20Received?=
+Reply-To: &lt;johirulislam2966@gmail.com&gt;
+User-Agent: CodeIgniter
+X-Sender: johirulislam2966@gmail.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;68ab592116b954.28355807@gmail.com&gt;
+Mime-Version: 1.0
+
+</pre>')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+ERROR - 2025-08-24 18:25:53 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-24 18:25:53 --> 220 smtp.gmail.com ESMTP 98e67ed59e1d1-3254ae8a9efsm4854892a91.9 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.79]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.79]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-3254ae8a9efsm4854892a91.9 - gsmtp
+
+CRITICAL - 2025-08-24 18:25:53 --> TypeError: implode(): Argument #2 ($array) must be of type ?array, string given
+[Method: POST, Route: order/submit]
+in APPPATH\Controllers\ShopController.php on line 110.
+ 1 APPPATH\Controllers\ShopController.php(110): implode(', ', '220 smtp.gmail.com ESMTP 98e67ed59e1d1-3254ae8a9efsm4854892a91.9 - gsmtp
+<br><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.79]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre><pre>starttls: 220 2.0.0 Ready to start TLS
+</pre><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.79]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre>Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-3254ae8a9efsm4854892a91.9 - gsmtp
+<br>Unable to send email using SMTP. Your server might not be configured to send mail using this method.<br><pre>Date: Sun, 24 Aug 2025 18:25:48 +0000
+From: &quot;Your Shop Name&quot; &lt;johirulislam2966@gmail.com&gt;
+Return-Path: &lt;johirulislam2966@gmail.com&gt;
+To: johirulislam6442@gmail.com
+Subject: =?UTF-8?Q?New=20Order=20Received?=
+Reply-To: &lt;johirulislam2966@gmail.com&gt;
+User-Agent: CodeIgniter
+X-Sender: johirulislam2966@gmail.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;68ab592c86d545.80449335@gmail.com&gt;
+Mime-Version: 1.0
+
+</pre>')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+ERROR - 2025-08-24 18:29:00 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-24 18:29:00 --> 220 smtp.gmail.com ESMTP 98e67ed59e1d1-3254b809c9asm4857989a91.26 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-3254b809c9asm4857989a91.26 - gsmtp
+
+CRITICAL - 2025-08-24 18:29:00 --> TypeError: implode(): Argument #2 ($array) must be of type ?array, string given
+[Method: POST, Route: order/submit]
+in APPPATH\Controllers\ShopController.php on line 110.
+ 1 APPPATH\Controllers\ShopController.php(110): implode(', ', '220 smtp.gmail.com ESMTP 98e67ed59e1d1-3254b809c9asm4857989a91.26 - gsmtp
+<br><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre><pre>starttls: 220 2.0.0 Ready to start TLS
+</pre><pre>hello: 250-smtp.gmail.com at your service, [182.252.75.78]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre>Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-3254b809c9asm4857989a91.26 - gsmtp
+<br>Unable to send email using SMTP. Your server might not be configured to send mail using this method.<br><pre>Date: Sun, 24 Aug 2025 18:28:55 +0000
+From: &quot;Your Shop Name&quot; &lt;johirulislam2966@gmail.com&gt;
+Return-Path: &lt;johirulislam2966@gmail.com&gt;
+To: johirulislam6442@gmail.com
+Subject: =?UTF-8?Q?New=20Order=20Received?=
+Reply-To: &lt;johirulislam2966@gmail.com&gt;
+User-Agent: CodeIgniter
+X-Sender: johirulislam2966@gmail.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;68ab59e70602a7.86154444@gmail.com&gt;
+Mime-Version: 1.0
+
+</pre>')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')

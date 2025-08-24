@@ -6,7 +6,6 @@ use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\BookModel;
 use App\Models\OrderModel;
-use App\Models\OrderItemModel;
 use Config\Services;
 
 class ShopController extends BaseController
@@ -17,82 +16,110 @@ class ShopController extends BaseController
         $books = (new BookModel())->findAll();
         return view('shop/index', ['books'=>$books]);
     }
-    // মূল দাম-ছাড়ের নিয়ম: প্রতি টাইটেলে qty >= 5 হলে 20% ডিসকাউন্ট
-    private function unitPriceWithDiscount(float $base, int $qty): float
+
+//  public function submit()
+//     {
+//         $db = db_connect();
+//         $orderModel = new OrderModel();
+//         $bookModel  = new BookModel();
+
+//         $customerData = [
+//             'customer_name'    => $this->request->getPost('customer_name'),
+//             'customer_mobile'  => $this->request->getPost('customer_mobile'),
+//             'customer_address' => $this->request->getPost('customer_address'),
+//         ];
+
+//         $items = $this->request->getPost('items'); // ফর্ম থেকে আসা qty গুলো
+
+//         foreach($items as $bookId => $qty) {
+//             if($qty > 0) {
+//                 $book = $bookModel->find($bookId);
+
+//                 $data = [
+//                     'customer_name'    => $customerData['customer_name'],
+//                     'customer_mobile'  => $customerData['customer_mobile'],
+//                     'customer_address' => $customerData['customer_address'],
+//                     'class_name'       => $book['class_name'],
+//                     'book_name'        => $book['name'],
+//                     'qty'              => $qty
+//                 ];
+
+//                 $orderModel->insert($data);
+//             }
+//         }
+
+//         return redirect()->to('/')->with('success', 'অর্ডার সম্পন্ন হয়েছে!');
+//     }
+
+ public function submit()
     {
-        return $qty >= 5 ? round($base * 0.80, 2) : $base;
-    }
+        $db = db_connect();
+        $orderModel = new OrderModel();
+        $bookModel  = new BookModel();
 
+        $customerData = [
+            'customer_name'    => $this->request->getPost('customer_name'),
+            'customer_mobile'  => $this->request->getPost('customer_mobile'),
+            'customer_address' => $this->request->getPost('customer_address'),
+        ];
 
+        $items = $this->request->getPost('items'); // ফর্ম থেকে আসা qty গুলো
 
-public function submit()
-{
-    helper(['form']);
-    $db = db_connect();
+        $orderDetails = ""; // মেইল-এর জন্য
 
-    // 1. Validation rules
-    $rules = [
-        'customer_name'    => 'required|min_length[2]',
-        'customer_mobile'  => 'required|min_length[10]|max_length[20]',
-        'customer_address' => 'required',
-        'items'            => 'required',
-    ];
-
-    if (! $this->validate($rules)) {
-        return redirect()->back()->with('error', 'অনুগ্রহ করে সব তথ্য সঠিকভাবে দিন')->withInput();
-    }
-
-    $orderModel     = new OrderModel();
-    $orderItemModel = new OrderItemModel();
-    $bookModel      = new BookModel();
-
-    $db->transStart(); // Transaction শুরু
-
-    try {
-        // 2. Save order
-        $orderId = $orderModel->insert([
-            'customer_name'   => $this->request->getPost('customer_name'),
-            'customer_mobile' => $this->request->getPost('customer_mobile'),
-            'customer_address'=> $this->request->getPost('customer_address'),
-        ], true); // true দিলে insert ID return করবে
-
-        // 3. Process items
-        $items = $this->request->getPost('items'); // items[book_id] => qty
-
-        foreach ($items as $bookId => $qty) {
-            if ($qty > 0) {
+        foreach($items as $bookId => $qty) {
+            if($qty > 0) {
                 $book = $bookModel->find($bookId);
-                if (!$book) continue;
 
-                // Discount rule
-                $unitPrice = $this->unitPriceWithDiscount($book['price'], $qty);
-                $subtotal  = $qty * $unitPrice;
+                $data = [
+                    'customer_name'    => $customerData['customer_name'],
+                    'customer_mobile'  => $customerData['customer_mobile'],
+                    'customer_address' => $customerData['customer_address'],
+                    'class_name'       => $book['class_name'],
+                    'book_name'        => $book['name'],
+                    'qty'              => $qty
+                ];
 
-                $orderItemModel->insert([
-                    'order_id'   => $orderId,
-                    'book_id'    => $bookId,
-                    'class_name' => $book['class_name'],
-                    'book_name'  => $book['name'],
-                    'qty'        => $qty,
-                    'unit_price' => $unitPrice,
-                    'subtotal'   => $subtotal,
-                ]);
+                $orderModel->insert($data);
+
+                // মেইল-এর জন্য বিস্তারিত যোগ করা
+                $orderDetails .= "Class: {$book['class_name']}, Book: {$book['name']}, Qty: {$qty}\n";
             }
         }
 
-        $db->transComplete(); // Transaction শেষ
+        // Email পাঠানোর সেটআপ
+        $email = \Config\Services::email();
 
-        if ($db->transStatus() === false) {
-            throw new \Exception('Transaction failed');
+        $email->setFrom('johirulislam2966@gmail.com', 'Your Shop Name'); // পরিবর্তন করো নিজের ইমেইল দিয়ে
+        $email->setTo('johirulislam6442@gmail.com'); // যে ইমেইলে পাঠাতে চাও
+
+        $email->setSubject('New Order Received');
+        $emailMessage = "নতুন অর্ডার এসেছে:\n\n";
+        $emailMessage .= "Customer Name: {$customerData['customer_name']}\n";
+        $emailMessage .= "Mobile: {$customerData['customer_mobile']}\n";
+        $emailMessage .= "Address: {$customerData['customer_address']}\n\n";
+        $emailMessage .= "Ordered Items:\n{$orderDetails}";
+
+        $email->setMessage($emailMessage);
+
+        if($email->send()){
+            return redirect()->to('/thank-you')->with('success', 'অর্ডার সম্পন্ন হয়েছে এবং মেইল পাঠানো হয়েছে!');
+        } else {
+            // যদি মেইল না পাঠানো যায়
+            $data = $email->printDebugger(['headers']);
+            return redirect()->to('/error')->with('error', 'অর্ডার সম্পন্ন হয়েছে কিন্তু মেইল পাঠানো যায়নি: ' . implode(", ", $data));
         }
-
-        return redirect()->to('/thank-you')->with('message', '✅ অর্ডার সফলভাবে গ্রহণ করা হয়েছে');
-
-    } catch (\Throwable $e) {
-        $db->transRollback();
-        log_message('error', 'Order Submit Error: ' . $e->getMessage());
-        return redirect()->back()->with('error', '❌ অর্ডার ব্যর্থ হয়েছে, আবার চেষ্টা করুন');
     }
+
+    public function thankYou()
+{
+    // ভিউ-তে session থেকে success মেসেজ পাঠানো হবে
+    return view('thank_you');
+}
+
+public function errorPage()
+{
+    return view('error_page');
 }
 
 }

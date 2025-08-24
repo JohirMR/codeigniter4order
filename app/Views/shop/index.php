@@ -62,7 +62,7 @@
         </div>
         <div class="col-md-4">
           <label class="form-label">মোবাইল</label>
-          <input type="text" name="customer_mobile" class="form-control" placeholder="01XXXXXXXXX" required>
+          <input type="number" name="customer_mobile" class="form-control" placeholder="01XXXXXXXXX" required>
         </div>
         <div class="col-md-4">
           <label class="form-label">ঠিকানা : যে ঠিকানায় কুরিয়ার নিতে চান</label>
