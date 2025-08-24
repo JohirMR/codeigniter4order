@@ -31,7 +31,7 @@
           <div class="card p-3 h-100">
             <div class="d-flex justify-content-between">
               <div>
-                <img src="<?= site_url( esc($b['image'])) ?>" alt="">
+              <img src="<?= site_url( esc($b['image'] ?? 'uploads/no-image.png')) ?>" alt="">
                 <h5 class="mb-1"><?= esc($b['name']) ?></h5>
                 <div>মূল্য: 
                   <strong class="base" data-price="<?= $b['price'] ?>">
@@ -52,10 +52,6 @@
 
     <?php endforeach; ?>
     </div> <!-- শেষ শ্রেণীর row close -->
-    
-    <button type="submit" class="btn btn-primary mt-4">অর্ডার কনফার্ম</button>
-  </form>
-</div>
 
 
     <div class="card p-3 mt-4">
@@ -65,11 +61,11 @@
           <input type="text" name="customer_name" class="form-control" required>
         </div>
         <div class="col-md-4">
-          <label class="form-label">ইমেইল</label>
+          <label class="form-label">মোবাইল</label>
           <input type="text" name="customer_mobile" class="form-control" placeholder="01XXXXXXXXX" required>
         </div>
         <div class="col-md-4">
-          <label class="form-label">ইমেইল</label>
+          <label class="form-label">ঠিকানা : যে ঠিকানায় কুরিয়ার নিতে চান</label>
             <textarea name="customer_address" required></textarea>       
            </div>
         <div class="col-md-12 d-flex align-items-end">

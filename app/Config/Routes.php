@@ -8,8 +8,8 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/demo', 'Home::index');
 $routes->get('/form', 'FormConTroller::index');
 $routes->get('/', 'ShopController::index');
-$routes->post('/order/preview', 'ShopController::preview');
-$routes->get('order/submit',  'ShopController::submit');
+// $routes->post('/order/preview', 'ShopController::preview');
+$routes->post('order/submit',  'ShopController::submit');
 
 $routes->group('admin', function($routes){
     $routes->get('books', 'Admin\Books::index');

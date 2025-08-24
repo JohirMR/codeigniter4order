@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2025 at 09:09 PM
+-- Generation Time: Aug 24, 2025 at 03:36 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.1.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -114,12 +114,10 @@ INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`
 
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
-  `customer_name` varchar(120) NOT NULL,
-  `customer_email` varchar(190) NOT NULL,
-  `total_qty` int(11) NOT NULL DEFAULT 0,
-  `total_amount` decimal(10,2) NOT NULL DEFAULT 0.00,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL
+  `customer_name` varchar(100) DEFAULT NULL,
+  `customer_mobile` varchar(20) DEFAULT NULL,
+  `customer_address` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -130,11 +128,13 @@ CREATE TABLE `orders` (
 
 CREATE TABLE `order_items` (
   `id` int(11) NOT NULL,
-  `order_id` int(11) NOT NULL,
-  `book_id` int(11) NOT NULL,
-  `qty` int(11) NOT NULL DEFAULT 1,
-  `unit_price` decimal(10,2) NOT NULL DEFAULT 0.00,
-  `subtotal` decimal(10,2) NOT NULL DEFAULT 0.00
+  `order_id` int(11) DEFAULT NULL,
+  `book_id` int(11) DEFAULT NULL,
+  `class_name` varchar(50) DEFAULT NULL,
+  `book_name` varchar(200) DEFAULT NULL,
+  `qty` int(11) DEFAULT NULL,
+  `unit_price` decimal(10,2) DEFAULT NULL,
+  `subtotal` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -172,8 +172,7 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `order_items`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `order_items_order_id_foreign` (`order_id`),
-  ADD KEY `order_items_book_id_foreign` (`book_id`);
+  ADD KEY `order_id` (`order_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -223,8 +222,7 @@ ALTER TABLE `books`
 -- Constraints for table `order_items`
 --
 ALTER TABLE `order_items`
-  ADD CONSTRAINT `order_items_book_id_foreign` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `order_items_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
