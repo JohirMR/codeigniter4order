@@ -10,6 +10,8 @@ $routes->get('/form', 'FormConTroller::index');
 $routes->get('/', 'ShopController::index');
 $routes->get('/thank-you', 'ShopController::thank-you');
 $routes->get('/error', 'ShopController::errorPage');
+$routes->get('/email', 'EmailTestController::index');
+$routes->setAutoRoute(true);
 // $routes->post('/order/preview', 'ShopController::preview');
 $routes->post('order/submit',  'ShopController::submit');
 

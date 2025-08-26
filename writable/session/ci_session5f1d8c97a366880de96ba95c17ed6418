@@ -1,0 +1,103 @@
+__ci_last_regenerate|i:1756199967;_ci_previous_url|s:27:"http://localhost:8080/error";error|s:5234:"অর্ডার সম্পন্ন হয়েছে কিন্তু মেইল পাঠানো যায়নি। Debug Info: 220-bh-66.webhostbox.net ESMTP Exim 4.98.1 #2 Tue, 26 Aug 2025 14:47:42 +0530 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+<br><pre>hello: 250-bh-66.webhostbox.net Hello localhost [113.11.119.225]
+250-SIZE 52428800
+250-LIMITS MAILMAX=50 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+</pre><pre>from: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+</pre>The following SMTP error was encountered: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+<br><pre>quit: 221 bh-66.webhostbox.net closing connection
+</pre>Unable to send email using SMTP. Your server might not be configured to send mail using this method.<br><pre>Date: Tue, 26 Aug 2025 09:17:41 +0000
+From: &quot;Your Shop Name&quot; &lt;mail.pixelbuildbd.com&gt;
+Return-Path: &lt;mail.pixelbuildbd.com&gt;
+To: johirulislam6442@gmail.com
+Subject: =?UTF-8?Q?New=20Order=20Received?=
+Reply-To: &lt;mail.pixelbuildbd.com&gt;
+User-Agent: CodeIgniter
+X-Sender: mail.pixelbuildbd.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;68ad7bb56c0288.18023716&gt;
+Mime-Version: 1.0
+
+
+Content-Type: multipart/alternative; boundary=&quot;B_ALT_68ad7bb56c0450.60093920&quot;
+
+This is a multi-part message in MIME format.
+Your email application may not support this format.
+
+--B_ALT_68ad7bb56c0450.60093920
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+🛒 নতুন অর্ডার এসেছে
+ Customer Name: joh
+ Mobile: 65656565
+ Address: fgfgfgfg
+
+ 📦 Ordered Items:
+
+
+ Item
+ Quantity
+ Price
+
+ Class: নার্সারী শ্রেণী, Book: বাংলা
+বর্ণমালা, Qty: 4
+Class: নার্সারী শ্রেণী, Book: ইংরেজি
+বর্ণমালা, Qty: 3
+Class: নার্সারী শ্রেণী, Book: গণিত
+শিক্ষা, Qty: 3
+
+
+
+
+ এই মেইলটি সিস্টেম থেকে
+অটোমেটিক পাঠানো হয়েছে।
+
+
+--B_ALT_68ad7bb56c0450.60093920
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+=0A&lt;!DOCTYPE html&gt;=0A&lt;html lang=3D&#039;bn&#039;&gt;=0A&lt;head&gt;=0A    &lt;meta charset=3D&#039;UTF=
+-8&#039;&gt;=0A    &lt;style&gt;=0A        body { font-family: Arial, sans-serif; line-he=
+ight:1.6; }=0A        .container { background:#f9f9f9; padding:20px; border=
+-radius:8px; }=0A        h2 { color:#333; }=0A        table { width:100%; b=
+order-collapse: collapse; margin-top:15px; }=0A        table, th, td { bord=
+er:1px solid #ddd; }=0A        th, td { padding:10px; text-align:left; }=0A=
+        .footer { margin-top:20px; font-size:13px; color:#777; }=0A    &lt;/st=
+yle&gt;=0A&lt;/head&gt;=0A&lt;body&gt;=0A    &lt;div class=3D&#039;container&#039;&gt;=0A        &lt;h2&gt;=
+=F0=9F=9B=92 =E0=A6=A8=E0=A6=A4=E0=A7=81=E0=A6=A8 =E0=A6=85=E0=A6=B0=
+=E0=A7=8D=E0=A6=A1=E0=A6=BE=E0=A6=B0 =E0=A6=8F=E0=A6=B8=E0=A7=87=E0=A6=
+=9B=E0=A7=87&lt;/h2&gt;=0A        &lt;p&gt;&lt;strong&gt;Customer Name:&lt;/strong&gt; joh&lt;/p&gt;=0A  =
+      &lt;p&gt;&lt;strong&gt;Mobile:&lt;/strong&gt; 65656565&lt;/p&gt;=0A        &lt;p&gt;&lt;strong&gt;Address=
+:&lt;/strong&gt; fgfgfgfg&lt;/p&gt;=0A=0A        &lt;h3&gt;=F0=9F=93=A6 Ordered Items:&lt;/h3&gt;=
+=0A        &lt;table&gt;=0A            &lt;tr&gt;=0A                &lt;th&gt;Item&lt;/th&gt;=0A   =
+             &lt;th&gt;Quantity&lt;/th&gt;=0A                &lt;th&gt;Price&lt;/th&gt;=0A         =
+   &lt;/tr&gt;=0A            Class: =E0=A6=A8=E0=A6=BE=E0=A6=B0=E0=A7=8D=E0=A6=
+=B8=E0=A6=BE=E0=A6=B0=E0=A7=80 =E0=A6=B6=E0=A7=8D=E0=A6=B0=E0=A7=87=
+=E0=A6=A3=E0=A7=80, Book: =E0=A6=AC=E0=A6=BE=E0=A6=82=E0=A6=B2=E0=A6=BE =
+=E0=A6=AC=E0=A6=B0=E0=A7=8D=E0=A6=A3=E0=A6=AE=E0=A6=BE=E0=A6=B2=E0=A6=BE, Q=
+ty: 4=0AClass: =E0=A6=A8=E0=A6=BE=E0=A6=B0=E0=A7=8D=E0=A6=B8=E0=A6=BE=
+=E0=A6=B0=E0=A7=80 =E0=A6=B6=E0=A7=8D=E0=A6=B0=E0=A7=87=E0=A6=A3=E0=A7=
+=80, Book: =E0=A6=87=E0=A6=82=E0=A6=B0=E0=A7=87=E0=A6=9C=E0=A6=BF =E0=A6=
+=AC=E0=A6=B0=E0=A7=8D=E0=A6=A3=E0=A6=AE=E0=A6=BE=E0=A6=B2=E0=A6=BE, Qty: 3=
+=0AClass: =E0=A6=A8=E0=A6=BE=E0=A6=B0=E0=A7=8D=E0=A6=B8=E0=A6=BE=E0=A6=
+=B0=E0=A7=80 =E0=A6=B6=E0=A7=8D=E0=A6=B0=E0=A7=87=E0=A6=A3=E0=A7=80, Book: =
+=E0=A6=97=E0=A6=A3=E0=A6=BF=E0=A6=A4 =E0=A6=B6=E0=A6=BF=E0=A6=95=E0=A7=
+=8D=E0=A6=B7=E0=A6=BE, Qty: 3=0A =0A        &lt;/table&gt;=0A=0A        &lt;div clas=
+s=3D&#039;footer&#039;&gt;=0A            &lt;p&gt;=E0=A6=8F=E0=A6=87 =E0=A6=AE=E0=A7=87=
+=E0=A6=87=E0=A6=B2=E0=A6=9F=E0=A6=BF =E0=A6=B8=E0=A6=BF=E0=A6=B8=E0=A7=
+=8D=E0=A6=9F=E0=A7=87=E0=A6=AE =E0=A6=A5=E0=A7=87=E0=A6=95=E0=A7=87 =
+=E0=A6=85=E0=A6=9F=E0=A7=8B=E0=A6=AE=E0=A7=87=E0=A6=9F=E0=A6=BF=E0=A6=95 =
+=E0=A6=AA=E0=A6=BE=E0=A6=A0=E0=A6=BE=E0=A6=A8=E0=A7=8B =E0=A6=B9=E0=A7=
+=9F=E0=A7=87=E0=A6=9B=E0=A7=87=E0=A5=A4&lt;/p&gt;=0A        &lt;/div&gt;=0A    &lt;/div&gt;=
+=0A&lt;/body&gt;=0A&lt;/html&gt;
+
+--B_ALT_68ad7bb56c0450.60093920--</pre>";__ci_vars|a:1:{s:5:"error";s:3:"old";}

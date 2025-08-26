@@ -1,0 +1,13 @@
+__ci_last_regenerate|i:1756177634;_ci_previous_url|s:27:"http://localhost:8080/error";error|s:720:"অর্ডার সম্পন্ন হয়েছে কিন্তু মেইল পাঠানো যায়নি। Debug info: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.<br><pre>Date: Tue, 26 Aug 2025 03:00:31 +0000
+From: &quot;Your Shop Name&quot; &lt;johirulislam2966@gmail.com&gt;
+Return-Path: &lt;johirulislam2966@gmail.com&gt;
+Reply-To: &lt;johirulislam2966@gmail.com&gt;
+User-Agent: CodeIgniter
+X-Sender: johirulislam2966@gmail.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;68ad234f5f5a08.98299822@gmail.com&gt;
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+</pre>";__ci_vars|a:1:{s:5:"error";s:3:"old";}

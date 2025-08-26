@@ -1,0 +1,576 @@
+ERROR - 2025-08-26 02:22:32 --> mysqli_sql_exception: Unknown column 'class_name' in 'field list' in C:\xampp\htdocs\codeigniter4order\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter4order\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `or...', 0)
+#1 C:\xampp\htdocs\codeigniter4order\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `or...')
+#2 C:\xampp\htdocs\codeigniter4order\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `or...')
+#3 C:\xampp\htdocs\codeigniter4order\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `or...', Array, false)
+#4 C:\xampp\htdocs\codeigniter4order\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\codeigniter4order\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\codeigniter4order\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\codeigniter4order\app\Controllers\ShopController.php(83): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+#9 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+#10 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\codeigniter4order\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\codeigniter4order\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\codeigniter4order\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\codeigniter4order\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-08-26 02:22:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'class_name' in 'field list'
+[Method: POST, Route: order/submit]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `orders` (`customer_name`, `customer_mobile`, `customer_address`, `class_name`, `book_name`, `qty`) VALUES (:customer_name:, :customer_mobile:, :customer_address:, :class_name:, :book_name:, :qty:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ShopController.php(83): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+CRITICAL - 2025-08-26 02:22:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'class_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `orders` (`customer_name`, `customer_mobile`, `customer_address`, `class_name`, `book_name`, `qty`) VALUES (\'joh\', \'65656565\', \'fgfgfg\', \'নার্সারী শ্রেণী\', \'ইংরেজি বর্ণমালা\', \'11\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `orders` (`customer_name`, `customer_mobile`, `customer_address`, `class_name`, `book_name`, `qty`) VALUES (\'joh\', \'65656565\', \'fgfgfg\', \'নার্সারী শ্রেণী\', \'ইংরেজি বর্ণমালা\', \'11\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `orders` (`customer_name`, `customer_mobile`, `customer_address`, `class_name`, `book_name`, `qty`) VALUES (:customer_name:, :customer_mobile:, :customer_address:, :class_name:, :book_name:, :qty:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\ShopController.php(83): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+CRITICAL - 2025-08-26 02:22:32 --> [Caused by] mysqli_sql_exception: Unknown column 'class_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `orders` (`customer_name`, `customer_mobile`, `customer_address`, `class_name`, `book_name`, `qty`) VALUES (\'joh\', \'65656565\', \'fgfgfg\', \'নার্সারী শ্রেণী\', \'ইংরেজি বর্ণমালা\', \'11\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `orders` (`customer_name`, `customer_mobile`, `customer_address`, `class_name`, `book_name`, `qty`) VALUES (\'joh\', \'65656565\', \'fgfgfg\', \'নার্সারী শ্রেণী\', \'ইংরেজি বর্ণমালা\', \'11\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `orders` (`customer_name`, `customer_mobile`, `customer_address`, `class_name`, `book_name`, `qty`) VALUES (\'joh\', \'65656565\', \'fgfgfg\', \'নার্সারী শ্রেণী\', \'ইংরেজি বর্ণমালা\', \'11\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `orders` (`customer_name`, `customer_mobile`, `customer_address`, `class_name`, `book_name`, `qty`) VALUES (:customer_name:, :customer_mobile:, :customer_address:, :class_name:, :book_name:, :qty:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\ShopController.php(83): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+ERROR - 2025-08-26 02:28:58 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\codeigniter4order\system\Email\Email.php:1771
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'C:\\xampp\\htdocs...', 1771)
+#1 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1771): mail('johirulislam644...', '=?UTF-8?Q?New=2...', '\xE0\xA6\xA8\xE0\xA6\xA4\xE0\xA7\x81\xE0\xA6\xA8 \xE0\xA6...', 'Date: Tue, 26 A...', '-f johirulislam...')
+#2 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1703): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1597): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\xampp\htdocs\codeigniter4order\app\Controllers\ShopController.php(105): CodeIgniter\Email\Email->send()
+#5 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+#6 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+#7 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\codeigniter4order\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\codeigniter4order\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\codeigniter4order\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\codeigniter4order\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2025-08-26 02:28:58 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 02:28:58 --> 
+CRITICAL - 2025-08-26 02:28:58 --> TypeError: implode(): Argument #2 ($array) must be of type ?array, string given
+[Method: POST, Route: order/submit]
+in APPPATH\Controllers\ShopController.php on line 110.
+ 1 APPPATH\Controllers\ShopController.php(110): implode(', ', 'Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.<br><pre>Date: Tue, 26 Aug 2025 02:28:56 +0000
+From: &quot;Your Shop Name&quot; &lt;johirulislam2966@gmail.com&gt;
+Return-Path: &lt;johirulislam2966@gmail.com&gt;
+Reply-To: &lt;johirulislam2966@gmail.com&gt;
+User-Agent: CodeIgniter
+X-Sender: johirulislam2966@gmail.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;68ad1be8124789.90883775@gmail.com&gt;
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+</pre>')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+ERROR - 2025-08-26 02:36:55 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\codeigniter4order\system\Email\Email.php:1771
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'C:\\xampp\\htdocs...', 1771)
+#1 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1771): mail('johirulislam644...', '=?UTF-8?Q?New=2...', '\xE0\xA6\xA8\xE0\xA6\xA4\xE0\xA7\x81\xE0\xA6\xA8 \xE0\xA6...', 'Date: Tue, 26 A...', '-f johirulislam...')
+#2 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1703): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1597): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\xampp\htdocs\codeigniter4order\app\Controllers\ShopController.php(105): CodeIgniter\Email\Email->send()
+#5 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+#6 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+#7 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\codeigniter4order\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\codeigniter4order\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\codeigniter4order\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\codeigniter4order\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2025-08-26 02:36:55 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 02:36:55 --> 
+CRITICAL - 2025-08-26 02:36:55 --> TypeError: implode(): Argument #2 ($array) must be of type ?array, string given
+[Method: POST, Route: order/submit]
+in APPPATH\Controllers\ShopController.php on line 110.
+ 1 APPPATH\Controllers\ShopController.php(110): implode(', ', 'Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.<br><pre>Date: Tue, 26 Aug 2025 02:36:52 +0000
+From: &quot;Your Shop Name&quot; &lt;johirulislam2966@gmail.com&gt;
+Return-Path: &lt;johirulislam2966@gmail.com&gt;
+Reply-To: &lt;johirulislam2966@gmail.com&gt;
+User-Agent: CodeIgniter
+X-Sender: johirulislam2966@gmail.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;68ad1dc4ec5f95.26935712@gmail.com&gt;
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+</pre>')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+ERROR - 2025-08-26 02:37:25 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\codeigniter4order\system\Email\Email.php:1771
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'C:\\xampp\\htdocs...', 1771)
+#1 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1771): mail('johirulislam644...', '=?UTF-8?Q?New=2...', '\xE0\xA6\xA8\xE0\xA6\xA4\xE0\xA7\x81\xE0\xA6\xA8 \xE0\xA6...', 'Date: Tue, 26 A...', '-f johirulislam...')
+#2 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1703): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1597): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\xampp\htdocs\codeigniter4order\app\Controllers\ShopController.php(105): CodeIgniter\Email\Email->send()
+#5 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+#6 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+#7 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\codeigniter4order\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\codeigniter4order\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\codeigniter4order\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\codeigniter4order\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2025-08-26 02:37:25 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 02:37:25 --> 
+CRITICAL - 2025-08-26 02:37:25 --> TypeError: implode(): Argument #2 ($array) must be of type ?array, string given
+[Method: POST, Route: order/submit]
+in APPPATH\Controllers\ShopController.php on line 110.
+ 1 APPPATH\Controllers\ShopController.php(110): implode(', ', 'Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.<br><pre>Date: Tue, 26 Aug 2025 02:37:23 +0000
+From: &quot;Your Shop Name&quot; &lt;johirulislam2966@gmail.com&gt;
+Return-Path: &lt;johirulislam2966@gmail.com&gt;
+Reply-To: &lt;johirulislam2966@gmail.com&gt;
+User-Agent: CodeIgniter
+X-Sender: johirulislam2966@gmail.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;68ad1de3d75618.77181045@gmail.com&gt;
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+</pre>')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+ERROR - 2025-08-26 02:40:59 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\codeigniter4order\system\Email\Email.php:1771
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'C:\\xampp\\htdocs...', 1771)
+#1 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1771): mail('johirulislam644...', '=?UTF-8?Q?New=2...', '\xE0\xA6\xA8\xE0\xA6\xA4\xE0\xA7\x81\xE0\xA6\xA8 \xE0\xA6...', 'Date: Tue, 26 A...', '-f johirulislam...')
+#2 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1703): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1597): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\xampp\htdocs\codeigniter4order\app\Controllers\ShopController.php(105): CodeIgniter\Email\Email->send()
+#5 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+#6 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+#7 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\codeigniter4order\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\codeigniter4order\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\codeigniter4order\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\codeigniter4order\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2025-08-26 02:40:59 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 02:40:59 --> 
+CRITICAL - 2025-08-26 02:40:59 --> TypeError: implode(): Argument #2 ($array) must be of type ?array, string given
+[Method: POST, Route: order/submit]
+in APPPATH\Controllers\ShopController.php on line 110.
+ 1 APPPATH\Controllers\ShopController.php(110): implode(', ', 'Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.<br><pre>Date: Tue, 26 Aug 2025 02:40:57 +0000
+From: &quot;Your Shop Name&quot; &lt;johirulislam2966@gmail.com&gt;
+Return-Path: &lt;johirulislam2966@gmail.com&gt;
+Reply-To: &lt;johirulislam2966@gmail.com&gt;
+User-Agent: CodeIgniter
+X-Sender: johirulislam2966@gmail.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;68ad1eb99dc4b0.60987569@gmail.com&gt;
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+</pre>')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+ERROR - 2025-08-26 02:45:19 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\codeigniter4order\system\Email\Email.php:1771
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'C:\\xampp\\htdocs...', 1771)
+#1 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1771): mail('johirulislam644...', '=?UTF-8?Q?New=2...', '\xE0\xA6\xA8\xE0\xA6\xA4\xE0\xA7\x81\xE0\xA6\xA8 \xE0\xA6...', 'Date: Tue, 26 A...', '-f johirulislam...')
+#2 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1703): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1597): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\xampp\htdocs\codeigniter4order\app\Controllers\ShopController.php(105): CodeIgniter\Email\Email->send()
+#5 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+#6 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+#7 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\codeigniter4order\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\codeigniter4order\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\codeigniter4order\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\codeigniter4order\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2025-08-26 02:45:19 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 02:45:19 --> 
+ERROR - 2025-08-26 03:00:33 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\codeigniter4order\system\Email\Email.php:1771
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'C:\\xampp\\htdocs...', 1771)
+#1 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1771): mail('johirulislam644...', '=?UTF-8?Q?New=2...', '\xE0\xA6\xA8\xE0\xA6\xA4\xE0\xA7\x81\xE0\xA6\xA8 \xE0\xA6...', 'Date: Tue, 26 A...', '-f johirulislam...')
+#2 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1703): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1597): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\xampp\htdocs\codeigniter4order\app\Controllers\ShopController.php(105): CodeIgniter\Email\Email->send()
+#5 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+#6 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+#7 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\codeigniter4order\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\codeigniter4order\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\codeigniter4order\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\codeigniter4order\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2025-08-26 03:00:33 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 03:00:33 --> 
+ERROR - 2025-08-26 08:36:51 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 08:36:51 --> 220-bh-66.webhostbox.net ESMTP Exim 4.98.1 #2 Tue, 26 Aug 2025 14:06:48 +0530 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+hello: 250-bh-66.webhostbox.net Hello localhost [113.11.119.225]
+250-SIZE 52428800
+250-LIMITS MAILMAX=50 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250-STARTTLS
+250 HELP
+
+starttls: 220 TLS go ahead
+
+hello: 250-bh-66.webhostbox.net Hello localhost [113.11.119.225]
+250-SIZE 52428800
+250-LIMITS MAILMAX=50 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+from: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+
+The following SMTP error was encountered: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+
+quit: 221 bh-66.webhostbox.net closing connection
+
+ERROR - 2025-08-26 08:39:12 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 08:39:12 --> 220-bh-66.webhostbox.net ESMTP Exim 4.98.1 #2 Tue, 26 Aug 2025 14:09:09 +0530 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+hello: 250-bh-66.webhostbox.net Hello localhost [113.11.119.225]
+250-SIZE 52428800
+250-LIMITS MAILMAX=50 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250-STARTTLS
+250 HELP
+
+starttls: 220 TLS go ahead
+
+hello: 250-bh-66.webhostbox.net Hello localhost [113.11.119.225]
+250-SIZE 52428800
+250-LIMITS MAILMAX=50 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+from: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+
+The following SMTP error was encountered: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+
+quit: 221 bh-66.webhostbox.net closing connection
+
+ERROR - 2025-08-26 08:40:53 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 08:40:53 --> 220-bh-66.webhostbox.net ESMTP Exim 4.98.1 #2 Tue, 26 Aug 2025 14:10:50 +0530 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+hello: 250-bh-66.webhostbox.net Hello localhost [113.11.119.225]
+250-SIZE 52428800
+250-LIMITS MAILMAX=50 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250-STARTTLS
+250 HELP
+
+starttls: 220 TLS go ahead
+
+hello: 250-bh-66.webhostbox.net Hello localhost [113.11.119.225]
+250-SIZE 52428800
+250-LIMITS MAILMAX=50 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+from: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+
+The following SMTP error was encountered: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+
+quit: 221 bh-66.webhostbox.net closing connection
+
+ERROR - 2025-08-26 08:41:58 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 08:41:58 --> 220-bh-66.webhostbox.net ESMTP Exim 4.98.1 #2 Tue, 26 Aug 2025 14:11:55 +0530 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+hello: 250-bh-66.webhostbox.net Hello localhost [113.11.119.225]
+250-SIZE 52428800
+250-LIMITS MAILMAX=50 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250-STARTTLS
+250 HELP
+
+starttls: 220 TLS go ahead
+
+hello: 250-bh-66.webhostbox.net Hello localhost [113.11.119.225]
+250-SIZE 52428800
+250-LIMITS MAILMAX=50 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+from: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+
+The following SMTP error was encountered: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+
+quit: 221 bh-66.webhostbox.net closing connection
+
+ERROR - 2025-08-26 08:43:48 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 08:43:48 --> 220-bh-66.webhostbox.net ESMTP Exim 4.98.1 #2 Tue, 26 Aug 2025 14:13:45 +0530 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+hello: 250-bh-66.webhostbox.net Hello localhost [113.11.119.225]
+250-SIZE 52428800
+250-LIMITS MAILMAX=50 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250-STARTTLS
+250 HELP
+
+starttls: 220 TLS go ahead
+
+hello: 250-bh-66.webhostbox.net Hello localhost [113.11.119.225]
+250-SIZE 52428800
+250-LIMITS MAILMAX=50 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+from: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+
+The following SMTP error was encountered: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+
+quit: 221 bh-66.webhostbox.net closing connection
+
+ERROR - 2025-08-26 08:58:58 --> Email: sendWithSmtp throwed ErrorException: fsockopen(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A00010B:SSL routines::wrong version number in C:\xampp\htdocs\codeigniter4order\system\Email\Email.php:1905
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fsockopen(): SS...', 'C:\\xampp\\htdocs...', 1905)
+#1 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1905): fsockopen('ssl://mail.pixe...', 587, NULL, NULL, 60)
+#2 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1818): CodeIgniter\Email\Email->SMTPConnect()
+#3 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1703): CodeIgniter\Email\Email->sendWithSmtp()
+#4 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1597): CodeIgniter\Email\Email->spoolEmail()
+#5 C:\xampp\htdocs\codeigniter4order\app\Controllers\EmailTestController.php(21): CodeIgniter\Email\Email->send()
+#6 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(933): App\Controllers\EmailTestController->index()
+#7 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmailTestController))
+#8 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\codeigniter4order\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\codeigniter4order\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\codeigniter4order\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\codeigniter4order\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+ERROR - 2025-08-26 08:58:58 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 08:58:58 --> 
+ERROR - 2025-08-26 09:04:50 --> Email: sendWithSmtp throwed ErrorException: fsockopen(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A00010B:SSL routines::wrong version number in C:\xampp\htdocs\codeigniter4order\system\Email\Email.php:1905
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fsockopen(): SS...', 'C:\\xampp\\htdocs...', 1905)
+#1 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1905): fsockopen('ssl://mail.pixe...', 587, NULL, NULL, 60)
+#2 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1818): CodeIgniter\Email\Email->SMTPConnect()
+#3 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1703): CodeIgniter\Email\Email->sendWithSmtp()
+#4 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1597): CodeIgniter\Email\Email->spoolEmail()
+#5 C:\xampp\htdocs\codeigniter4order\app\Controllers\EmailTestController.php(21): CodeIgniter\Email\Email->send()
+#6 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(933): App\Controllers\EmailTestController->index()
+#7 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmailTestController))
+#8 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\codeigniter4order\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\codeigniter4order\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\codeigniter4order\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\codeigniter4order\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+ERROR - 2025-08-26 09:04:50 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 09:04:50 --> 
+ERROR - 2025-08-26 09:09:49 --> Email: sendWithSmtp throwed ErrorException: fsockopen(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A00010B:SSL routines::wrong version number in C:\xampp\htdocs\codeigniter4order\system\Email\Email.php:1905
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fsockopen(): SS...', 'C:\\xampp\\htdocs...', 1905)
+#1 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1905): fsockopen('ssl://mail.pixe...', 587, NULL, NULL, 60)
+#2 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1818): CodeIgniter\Email\Email->SMTPConnect()
+#3 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1703): CodeIgniter\Email\Email->sendWithSmtp()
+#4 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1597): CodeIgniter\Email\Email->spoolEmail()
+#5 C:\xampp\htdocs\codeigniter4order\app\Controllers\EmailTestController.php(21): CodeIgniter\Email\Email->send()
+#6 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(933): App\Controllers\EmailTestController->index()
+#7 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmailTestController))
+#8 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\codeigniter4order\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\codeigniter4order\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\codeigniter4order\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\codeigniter4order\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+ERROR - 2025-08-26 09:09:49 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 09:09:49 --> 
+ERROR - 2025-08-26 09:09:54 --> Email: sendWithSmtp throwed ErrorException: fsockopen(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A00010B:SSL routines::wrong version number in C:\xampp\htdocs\codeigniter4order\system\Email\Email.php:1905
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fsockopen(): SS...', 'C:\\xampp\\htdocs...', 1905)
+#1 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1905): fsockopen('ssl://mail.pixe...', 587, NULL, NULL, 60)
+#2 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1818): CodeIgniter\Email\Email->SMTPConnect()
+#3 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1703): CodeIgniter\Email\Email->sendWithSmtp()
+#4 C:\xampp\htdocs\codeigniter4order\system\Email\Email.php(1597): CodeIgniter\Email\Email->spoolEmail()
+#5 C:\xampp\htdocs\codeigniter4order\app\Controllers\EmailTestController.php(21): CodeIgniter\Email\Email->send()
+#6 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(933): App\Controllers\EmailTestController->index()
+#7 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmailTestController))
+#8 C:\xampp\htdocs\codeigniter4order\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\codeigniter4order\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\codeigniter4order\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\codeigniter4order\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\codeigniter4order\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+ERROR - 2025-08-26 09:09:54 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 09:09:54 --> 
+ERROR - 2025-08-26 09:13:24 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 09:13:24 --> 220-bh-66.webhostbox.net ESMTP Exim 4.98.1 #2 Tue, 26 Aug 2025 14:43:22 +0530 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+hello: 250-bh-66.webhostbox.net Hello localhost [113.11.119.225]
+250-SIZE 52428800
+250-LIMITS MAILMAX=50 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+from: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+
+The following SMTP error was encountered: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+
+quit: 221 bh-66.webhostbox.net closing connection
+
+ERROR - 2025-08-26 09:17:44 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 09:17:44 --> 220-bh-66.webhostbox.net ESMTP Exim 4.98.1 #2 Tue, 26 Aug 2025 14:47:42 +0530 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+hello: 250-bh-66.webhostbox.net Hello localhost [113.11.119.225]
+250-SIZE 52428800
+250-LIMITS MAILMAX=50 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+from: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+
+The following SMTP error was encountered: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+
+quit: 221 bh-66.webhostbox.net closing connection
+
+ERROR - 2025-08-26 09:19:41 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 09:19:41 --> 220-bh-66.webhostbox.net ESMTP Exim 4.98.1 #2 Tue, 26 Aug 2025 14:49:40 +0530 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+hello: 250-bh-66.webhostbox.net Hello localhost [113.11.119.225]
+250-SIZE 52428800
+250-LIMITS MAILMAX=50 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+from: 501 <johir.pixelbuildbd.com>: sender address must contain a domain
+
+The following SMTP error was encountered: 501 <johir.pixelbuildbd.com>: sender address must contain a domain
+
+quit: 221 bh-66.webhostbox.net closing connection
+
+ERROR - 2025-08-26 09:20:44 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-08-26 09:20:44 --> 220-bh-66.webhostbox.net ESMTP Exim 4.98.1 #2 Tue, 26 Aug 2025 14:50:43 +0530 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+hello: 250-bh-66.webhostbox.net Hello localhost [113.11.119.225]
+250-SIZE 52428800
+250-LIMITS MAILMAX=50 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+from: 501 <johir.pixelbuildbd.com>: sender address must contain a domain
+
+The following SMTP error was encountered: 501 <johir.pixelbuildbd.com>: sender address must contain a domain
+
+quit: 221 bh-66.webhostbox.net closing connection
+

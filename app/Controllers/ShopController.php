@@ -87,29 +87,54 @@ class ShopController extends BaseController
             }
         }
 
-        // Email পাঠানোর সেটআপ
-        $email = \Config\Services::email();
+//         // Email পাঠানোর সেটআপ
+//         $email = \Config\Services::email();
 
-        $email->setFrom('johirulislam2966@gmail.com', 'Your Shop Name'); // পরিবর্তন করো নিজের ইমেইল দিয়ে
-        $email->setTo('johirulislam6442@gmail.com'); // যে ইমেইলে পাঠাতে চাও
+//         $email->setFrom('johir.pixelbuildbd.com', 'Your Shop Name'); // পরিবর্তন করো নিজের ইমেইল দিয়ে
+//         $email->setTo('johirulislam6442@gmail.com'); // যে ইমেইলে পাঠাতে চাও
 
-        $email->setSubject('New Order Received');
-        $emailMessage = "নতুন অর্ডার এসেছে:\n\n";
-        $emailMessage .= "Customer Name: {$customerData['customer_name']}\n";
-        $emailMessage .= "Mobile: {$customerData['customer_mobile']}\n";
-        $emailMessage .= "Address: {$customerData['customer_address']}\n\n";
-        $emailMessage .= "Ordered Items:\n{$orderDetails}";
+//         $email->setSubject('New Order Received');
 
-        $email->setMessage($emailMessage);
 
-        if($email->send()){
-            return redirect()->to('/thank-you')->with('success', 'অর্ডার সম্পন্ন হয়েছে এবং মেইল পাঠানো হয়েছে!');
-        } else {
-            // যদি মেইল না পাঠানো যায়
-            $data = $email->printDebugger(['headers']);
-            return redirect()->to('/error')->with('error', 'অর্ডার সম্পন্ন হয়েছে কিন্তু মেইল পাঠানো যায়নি: ' . implode(", ", $data));
+
+//         $emailMessage = "নতুন অর্ডার এসেছে:\n\n";
+        //$emailMessage .= "Customer Name: {$customerData['customer_name']}\n";
+//         $emailMessage .= "Mobile: {$customerData['customer_mobile']}\n";
+//         $emailMessage .= "Address: {$customerData['customer_address']}\n\n";
+//         $emailMessage .= "Ordered Items:\n{$orderDetails}";
+
+//         $email->setMessage($emailMessage);
+
+//         if($email->send()){
+//     return redirect()->to('/thank-you')->with('success', 'অর্ডার সম্পন্ন হয়েছে এবং মেইল পাঠানো হয়েছে!');
+// } else {
+//     // $data = $email->printDebugger(['headers']);
+//     // return redirect()->to('/error')->with('error', 'অর্ডার সম্পন্ন হয়েছে কিন্তু মেইল পাঠানো যায়নি। Debug info: ' . $data);
+//      // Debug তথ্য string আকারে আসবে
+//     $debugData = $email->printDebugger(['headers','subject','body']);
+//     return redirect()->to('/error')
+//                      ->with('error', 'অর্ডার সম্পন্ন হয়েছে কিন্তু মেইল পাঠানো যায়নি। Debug Info: ' . $debugData);
+// }
+
+//     }
+
+
+ $email = \Config\Services::email();
+
+            // Config/Email.php এর সেটিংস ব্যবহার করবে
+            $email->setFrom('johir@pixelbuildbd.com', 'Johir Test'); // নিজের ইমেইল
+            $email->setTo('johirulislam6442@gmail.com');   // যে ইমেইলে টেস্ট পাঠাবে
+
+            $email->setSubject('Test Email from CodeIgniter 4');
+            $email->setMessage("   <h2>Test Mail  Customer Name:" .$customerData['customer_name'] ."</h2><p>This is a test email from your CI4 project.</p>");
+
+            if ($email->send()) {
+                return "✅ টেস্ট ইমেইল সফলভাবে পাঠানো হয়েছে!";
+            } else {
+                $debugData = $email->printDebugger(['headers','subject','body']);
+                return "❌ মেইল পাঠানো যায়নি। Debug Info: <br><pre>" . $debugData . "</pre>";
+            }
         }
-    }
 
     public function thankYou()
 {
