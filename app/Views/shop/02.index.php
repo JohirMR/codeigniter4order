@@ -10,7 +10,7 @@
     <h3><?= esc($class['name']) ?></h3>
     <ul>
         <?php foreach($books[$class['id']] as $book): ?>
-            <li><?= esc($book['name']) ?> - <?= $book['price'] ?> টাকা</li>
+            <li><?= esc($book['name']) ?> - <?= $book['price'] ?> johir টাকা</li>
         <?php endforeach; ?>
     </ul>
 <?php endforeach; ?>
