@@ -118,7 +118,6 @@ class ShopController extends BaseController
 
 //     }
 
-
  $email = \Config\Services::email();
 
             // Config/Email.php এর সেটিংস ব্যবহার করবে
@@ -126,13 +125,14 @@ class ShopController extends BaseController
             $email->setTo('johirulislam6442@gmail.com');   // যে ইমেইলে টেস্ট পাঠাবে
 
             $email->setSubject('Test Email from CodeIgniter 4');
-            $email->setMessage("   <h2>Test Mail  Customer Name:" .$customerData['customer_name'] ."</h2><p>This is a test email from your CI4 project.</p>");
+            $email->setMessage("<h2>Customer Name:".$customerData['customer_name']."</h2>
+            <h4> Mobile: ".$customerData['customer_mobile']."</h4> <p>Address:".$customerData['customer_address']."</p> <p>Ordered Items:".$orderDetails."</p>");
 
             if ($email->send()) {
-                return "✅ টেস্ট ইমেইল সফলভাবে পাঠানো হয়েছে!";
+                return redirect()->to('/thank-you')->with( 'success', "✅ টেস্ট ইমেইল সফলভাবে পাঠানো হয়েছে!");
             } else {
                 $debugData = $email->printDebugger(['headers','subject','body']);
-                return "❌ মেইল পাঠানো যায়নি। Debug Info: <br><pre>" . $debugData . "</pre>";
+                return redirect()->to('/error')->with( 'error', "❌ মেইল পাঠানো যায়নি। Debug Info: <br><pre>" . $debugData . "</pre>");
             }
         }
 
