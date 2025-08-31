@@ -574,3 +574,14 @@ The following SMTP error was encountered: 501 <johir.pixelbuildbd.com>: sender a
 
 quit: 221 bh-66.webhostbox.net closing connection
 
+CRITICAL - 2025-08-26 23:48:27 --> ArgumentCountError: Too few arguments to function CodeIgniter\HTTP\RedirectResponse::with(), 1 passed in C:\xampp\htdocs\codeigniter4order\app\Controllers\ShopController.php on line 131 and exactly 2 expected
+[Method: POST, Route: order/submit]
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 132.
+ 1 APPPATH\Controllers\ShopController.php(131): CodeIgniter\HTTP\RedirectResponse->with('✅ টেস্ট ইমেইল সফলভাবে পাঠানো হয়েছে!')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
