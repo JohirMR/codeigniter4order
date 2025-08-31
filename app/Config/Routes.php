@@ -8,7 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/demo', 'Home::index');
 $routes->get('/form', 'FormConTroller::index');
 $routes->get('/', 'ShopController::index');
-$routes->get('/thank-you', 'ShopController::thank-you');
+$routes->get('/thank-you', 'ShopController::thankYou');
 $routes->get('/error', 'ShopController::errorPage');
 $routes->get('/email', 'EmailTestController::index');
 $routes->setAutoRoute(true);

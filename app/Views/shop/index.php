@@ -7,11 +7,29 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 <style>
 .card{border-radius:16px}
+
+.ta_image {
+    width: 115px;
+    height: 155px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+.ta_Content_flex{
+  flex-wrap: wrap;
+  justify-content: center !important
+}
+}
+
+
 </style>
 </head>
 <body class="bg-light">
 <div class="container py-4">
   <h2 class="mb-4">নার্সারী থেকে অষ্টম শ্রেণি — বই অর্ডার</h2>
+  <small class="text-muted">৫ বা তার বেশি কপি নিলে ২০% ছাড়।</small>
+
 
   <form method="post" action="<?= site_url('order/submit') ?>" id="orderForm">
 
@@ -23,25 +41,24 @@
           if($currentClass != '') echo "</div>"; 
           $currentClass = $b['class_name'];
     ?>
-        <h3 class="mt-4"><?= esc($currentClass) ?></h3>
+        <h3 class="mt-4 text-center "><?= esc($currentClass) ?></h3>
         <div class="row g-3">
     <?php endif; ?>
       
         <div class="col-md-6">
           <div class="card p-3 h-100">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between ta_Content_flex">
+              <div class="ta_image"><img class="rounded img-thumbnail" src="<?= site_url( esc($b['image'] ?? 'uploads/no-image.png')) ?>" alt=""></div>
               <div>
-              <img src="<?= site_url( esc($b['image'] ?? 'uploads/no-image.png')) ?>" alt="">
                 <h5 class="mb-1"><?= esc($b['name']) ?></h5>
                 <div>মূল্য: 
                   <strong class="base" data-price="<?= $b['price'] ?>">
                     <?= number_format($b['price'],2) ?>
                   </strong> টাকা
                 </div>
-                <small class="text-muted">৫ বা তার বেশি কপি নিলে ২০% ছাড়।</small>
               </div>
               <div style="min-width:150px">
-                <label class="form-label mb-0">কয় কপি?</label>
+                <label class="form-label mb-0">কত কপি?</label>
                 <input type="number" min="0" value="0" class="form-control qty" 
                   name="items[<?= $b['id'] ?>]">
                 <div class="mt-2">সাবটোটাল: <span class="line-sub">0.00</span></div>
@@ -56,18 +73,19 @@
 
     <div class="card p-3 mt-4">
       <div class="row g-3">
-        <div class="col-md-4">
+        <div class="col-md-6">
           <label class="form-label">নাম</label>
           <input type="text" name="customer_name" class="form-control" required>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
           <label class="form-label">মোবাইল</label>
           <input type="number" name="customer_mobile" class="form-control" placeholder="01XXXXXXXXX" required>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-12">
           <label class="form-label">ঠিকানা : যে ঠিকানায় কুরিয়ার নিতে চান</label>
-            <textarea name="customer_address" required></textarea>       
+            <textarea class="form-control" rows="3" name="customer_address" required></textarea>       
            </div>
+
         <div class="col-md-12 d-flex align-items-end">
           <div class="ms-auto">
             <div class="h5 mb-1">মোট বই: <span id="totalQty">0</span></div>
