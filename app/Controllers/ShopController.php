@@ -184,7 +184,6 @@ public function submit()
         }
     }
 
-<<<<<<< HEAD
     // HTML Table আকারে মেইলের জন্য তৈরি করা
     $orderDetails = "";
     foreach($groupedOrders as $className => $books) {
@@ -206,55 +205,6 @@ public function submit()
                                 <td align='right'>" . number_format($b['price'],2) . "</td>
                                 <td align='right'>" . number_format($subtotal,2) . "</td>
                               </tr>";
-=======
-//         // Email পাঠানোর সেটআপ
-//         $email = \Config\Services::email();
-
-//         $email->setFrom('johir.pixelbuildbd.com', 'Your Shop Name'); // পরিবর্তন করো নিজের ইমেইল দিয়ে
-//         $email->setTo('johirulislam6442@gmail.com'); // যে ইমেইলে পাঠাতে চাও
-
-//         $email->setSubject('New Order Received');
-
-
-
-//         $emailMessage = "নতুন অর্ডার এসেছে:\n\n";
-        //$emailMessage .= "Customer Name: {$customerData['customer_name']}\n";
-//         $emailMessage .= "Mobile: {$customerData['customer_mobile']}\n";
-//         $emailMessage .= "Address: {$customerData['customer_address']}\n\n";
-//         $emailMessage .= "Ordered Items:\n{$orderDetails}";
-
-//         $email->setMessage($emailMessage);
-
-//         if($email->send()){
-//     return redirect()->to('/thank-you')->with('success', 'অর্ডার সম্পন্ন হয়েছে এবং মেইল পাঠানো হয়েছে!');
-// } else {
-//     // $data = $email->printDebugger(['headers']);
-//     // return redirect()->to('/error')->with('error', 'অর্ডার সম্পন্ন হয়েছে কিন্তু মেইল পাঠানো যায়নি। Debug info: ' . $data);
-//      // Debug তথ্য string আকারে আসবে
-//     $debugData = $email->printDebugger(['headers','subject','body']);
-//     return redirect()->to('/error')
-//                      ->with('error', 'অর্ডার সম্পন্ন হয়েছে কিন্তু মেইল পাঠানো যায়নি। Debug Info: ' . $debugData);
-// }
-
-//     }
-
- $email = \Config\Services::email();
-
-            // Config/Email.php এর সেটিংস ব্যবহার করবে
-            $email->setFrom('johir@pixelbuildbd.com', 'Johir Test'); // নিজের ইমেইল
-            $email->setTo('johirulislam6442@gmail.com');   // যে ইমেইলে টেস্ট পাঠাবে
-
-            $email->setSubject('Test Email from CodeIgniter 4');
-            $email->setMessage("<h2>Customer Name:".$customerData['customer_name']."</h2>
-            <h4> Mobile: ".$customerData['customer_mobile']."</h4> <p>Address:".$customerData['customer_address']."</p> <p>Ordered Items:".$orderDetails."</p>");
-
-            if ($email->send()) {
-                return redirect()->to('/thank-you')->with( 'success', "✅ টেস্ট ইমেইল সফলভাবে পাঠানো হয়েছে!");
-            } else {
-                $debugData = $email->printDebugger(['headers','subject','body']);
-                return redirect()->to('/error')->with( 'error', "❌ মেইল পাঠানো যায়নি। Debug Info: <br><pre>" . $debugData . "</pre>");
-            }
->>>>>>> 19759ed3e4a0e958fcf12bceef127054396712e6
         }
         $orderDetails .= "<tr style='font-weight:bold;background:#f9f9f9;'>
                             <td colspan='3' align='right'>Class Total</td>
