@@ -1,0 +1,70 @@
+CRITICAL - 2025-09-01 04:56:24 --> ErrorException: Undefined array key "hfb_code"
+[Method: POST, Route: order/submit]
+in APPPATH\Controllers\ShopController.php on line 203.
+ 1 APPPATH\Controllers\ShopController.php(203): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "hfb_code"', 'C:\\xampp\\htdocs\\codeigniter4order\\app\\Controllers\\ShopController.php', 203)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+CRITICAL - 2025-09-01 08:34:57 --> TypeError: Cannot access offset of type string on string
+[Method: POST, Route: order/submit]
+in APPPATH\Controllers\ShopController.php on line 192.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopController->submit()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter4order\\public\\index.php')
+ERROR - 2025-09-01 09:02:55 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-09-01 09:02:55 --> 220-bh-66.webhostbox.net ESMTP Exim 4.98.1 #2 Mon, 01 Sep 2025 14:32:54 +0530 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+hello: 250-bh-66.webhostbox.net Hello localhost [113.11.119.225]
+250-SIZE 52428800
+250-LIMITS MAILMAX=50 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+from: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+
+The following SMTP error was encountered: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+
+quit: 221 bh-66.webhostbox.net closing connection
+
+ERROR - 2025-09-01 09:02:55 --> Order email failed: 220-bh-66.webhostbox.net ESMTP Exim 4.98.1 #2 Mon, 01 Sep 2025 14:32:54 +0530 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+<br><pre>hello: 250-bh-66.webhostbox.net Hello localhost [113.11.119.225]
+250-SIZE 52428800
+250-LIMITS MAILMAX=50 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+</pre><pre>from: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+</pre>The following SMTP error was encountered: 501 <mail.pixelbuildbd.com>: sender address must contain a domain
+<br><pre>quit: 221 bh-66.webhostbox.net closing connection
+</pre>Unable to send email using SMTP. Your server might not be configured to send mail using this method.<br><pre>Date: Mon, 1 Sep 2025 09:02:52 +0000
+To: johirulislam6442@gmail.com
+Subject: =?UTF-8?Q?New=20Order=20Received=20-=20=E0=A6=9C=E0=A6=B9=E0=A6=BF?= =?UTF-8?Q?=E0=A6=B0=E0=A7=81=E0=A6=B2=20=E0=A6=87=E0=A6=B8=E0=A6=B2?= =?UTF-8?Q?=E0=A6=BE=E0=A6=AE?=
+From: &quot;Johir Shop&quot; &lt;mail.pixelbuildbd.com&gt;
+Return-Path: &lt;mail.pixelbuildbd.com&gt;
+Reply-To: &lt;mail.pixelbuildbd.com&gt;
+User-Agent: CodeIgniter
+X-Sender: mail.pixelbuildbd.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;68b5613c79fd00.95499196&gt;
+Mime-Version: 1.0
+
+
+</pre>

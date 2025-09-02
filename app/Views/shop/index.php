@@ -5,12 +5,26 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>বই অর্ডার</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<!-- <link href="https://fonts.cdnfonts.com/css/solaimanlipi" rel="stylesheet"> -->
+<link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+
 <style>
+ /* @import url('https://fonts.cdnfonts.com/css/solaimanlipi');*/
+ @import url('https://fonts.maateen.me/solaiman-lipi/font.css');
+
+body{
+    font-family: 'SolaimanLipi', sans-serif;
+}
+
 .card{border-radius:16px}
 
 .ta_image {
     width: 115px;
     height: 155px;
+}
+
+.section-padding{
+  padding: 50px;
 }
 
 
@@ -26,10 +40,28 @@
 </style>
 </head>
 <body class="bg-light">
-<div class="container py-4">
-  <h2 class="mb-4">নার্সারী থেকে অষ্টম শ্রেণি — বই অর্ডার</h2>
-  <small class="text-muted">৫ বা তার বেশি কপি নিলে ২০% ছাড়।</small>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+       <div class="d-flex flex-column text-center">
+        <div class=""><a href="<?= site_url('/') ?>">   
+            <img class="img-fluid"  src="<?= site_url('uploads/logo/logo.png')?>" alt="logo">
+          </a>
+        </div>
+          <h2 class="mt-4 fw-bold">হাদীছ ফাউণ্ডেশন শিক্ষা বোর্ড-এর বই সমূহ অর্ডার করুন</h2>
+          <p class="fs-4">৫ বা তার বেশি কপি নিলে ২০% ছাড়।</p>
+       </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container py-4">
+
+    <?php if(session()->getFlashdata('error')): ?>
+    <div class="alert alert-danger"><?= esc(session()->getFlashdata('error')) ?></div>
+  <?php endif; ?>
 
   <form method="post" action="<?= site_url('order/submit') ?>" id="orderForm">
 
@@ -41,7 +73,7 @@
           if($currentClass != '') echo "</div>"; 
           $currentClass = $b['class_name'];
     ?>
-        <h3 class="mt-4 text-center "><?= esc($currentClass) ?></h3>
+        <h3 class="mt-4 text-center ta-class fs-2 fw-bold"><?= esc($currentClass) ?></h3>
         <div class="row g-3">
     <?php endif; ?>
       

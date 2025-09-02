@@ -142,11 +142,11 @@ class ShopController extends BaseController
 
 
 
-
+/*
 public function submit()
 {
-    $db = db_connect();
-    $orderModel = new OrderModel();
+  //  $db = db_connect();
+  //  $orderModel = new OrderModel();
     $bookModel  = new BookModel();
 
     $customerData = [
@@ -164,22 +164,24 @@ public function submit()
         if($qty > 0) {
             $book = $bookModel->find($bookId);
 
-            $data = [
-                'customer_name'    => $customerData['customer_name'],
-                'customer_mobile'  => $customerData['customer_mobile'],
-                'customer_address' => $customerData['customer_address'],
-                'class_name'       => $book['class_name'],
-                'book_name'        => $book['name'],
-                'qty'              => $qty
-            ];
+            // $data = [
+            //     'customer_name'    => $customerData['customer_name'],
+            //     'customer_mobile'  => $customerData['customer_mobile'],
+            //     'customer_address' => $customerData['customer_address'],
+            //     'class_name'       => $book['class_name'],
+            //     'book_name'        => $book['name'],
+            //     'qty'              => $qty
+            // ];
 
-            $orderModel->insert($data);
+            // $orderModel->insert($data);
 
             // Group করে রাখছি
             $groupedOrders[$book['class_name']][] = [
                 'book_name' => $book['name'],
                 'qty'       => $qty,
                 'price'     => $book['price'],
+                'hfb_code'  => $book['hfb_code'],
+                'hfb_code_book'  => $book['hfb_code_book'],
             ];
         }
     }
@@ -187,7 +189,8 @@ public function submit()
     // HTML Table আকারে মেইলের জন্য তৈরি করা
     $orderDetails = "";
     foreach($groupedOrders as $className => $books) {
-        $orderDetails .= "<h4 style='margin-top:15px;'>📚 {$className}</h4>";
+        $hfbCodeBook = $books[0]['hfb_code_book'];
+        $orderDetails .= "<h4 style='margin-top:15px;'>📚 {$className} : {$hfbCodeBook}</h4>";
         $orderDetails .= "<table border='1' cellpadding='6' cellspacing='0' width='100%' style='border-collapse:collapse;margin-bottom:15px;'>
                             <tr style='background:#f2f2f2;'>
                                 <th align='left'>Book</th>
@@ -200,7 +203,7 @@ public function submit()
             $subtotal = $b['qty'] * $b['price'];
             $classTotal += $subtotal;
             $orderDetails .= "<tr>
-                                <td>{$b['book_name']}</td>
+                                <td>{$b['book_name']} : {$b['hfb_code']} </td>
                                 <td align='center'>{$b['qty']}</td>
                                 <td align='right'>" . number_format($b['price'],2) . "</td>
                                 <td align='right'>" . number_format($subtotal,2) . "</td>
@@ -224,20 +227,117 @@ public function submit()
     <p><strong>Customer Name:</strong> {$customerData['customer_name']}</p>
     <p><strong>Mobile:</strong> {$customerData['customer_mobile']}</p>
     <p><strong>Address:</strong> {$customerData['customer_address']}</p>
-    {$orderDetails}
-    <p style='font-size:12px;color:#777;'>এই মেইলটি সিস্টেম থেকে অটোমেটিক পাঠানো হয়েছে।</p>
-    ";
+    {$orderDetails}";
 
     $email->setMessage($emailMessage);
 
     if($email->send()){
-        return redirect()->to('/thank-you')->with('success', 'অর্ডার সম্পন্ন হয়েছে এবং মেইল পাঠানো হয়েছে!');
+        return redirect()->to('/thank-you')->with('success', '<h1>আপনার অর্ডারটি সফলভাবে প্রেরিত হয়েছে। কিছুক্ষণের মধ্যে আপনার সাথে যোগাযোগ করা হবে ইনশাআল্লাহ। প্রয়োজনে যোগাযোগ করুন : 01770800900, 01741476790</h1>');
     } else {
         $debugData = $email->printDebugger(['headers','subject','body']);
         return redirect()->to('/error')
-                        ->with('error', 'অর্ডার সম্পন্ন হয়েছে কিন্তু মেইল পাঠানো যায়নি। Debug Info: ' . $debugData);
+                        ->with('error', 'অর্ডার সম্পন্ন হয়নি। Debug Info: ' . $debugData);
+    }
+}*/
+
+
+public function submit()
+{
+    $bookModel  = new BookModel();
+
+    // Form data
+    $customerData = [
+        'customer_name'    => esc($this->request->getPost('customer_name')),
+        'customer_mobile'  => esc($this->request->getPost('customer_mobile')),
+        'customer_address' => esc($this->request->getPost('customer_address')),
+    ];
+
+    $items = $this->request->getPost('items'); // form  qty array
+
+    if (empty($items) || !is_array($items)) {
+        return redirect()->back()->with('error', 'কোন বই নির্বাচিত হয়নি।');
+    }
+
+    // ✅ Class Group
+    $groupedOrders = [];
+    foreach ($items as $bookId => $qty) {
+        if ((int)$qty > 0) {
+            $book = $bookModel->find($bookId);
+            if (!$book) {
+                continue; // Book Empty
+            }
+
+            $groupedOrders[$book['class_name']][] = [
+                'book_name' => $book['name'],
+                'qty'       => (int)$qty,
+                'price'     => (float)$book['price'],
+                'hfb_code'  => $book['hfb_code'],
+                'hfb_code_book' => $book['hfb_code_book'],
+            ];
+        }
+    }
+
+    if (empty($groupedOrders)) {
+        return redirect()->back()->with('error', 'আপনি কোনো বই নির্বাচন করেননি।');
+    }
+
+    // ✅ Email body তৈরি
+    $orderDetails = "";
+    foreach ($groupedOrders as $className => $books) {
+        $hfbCodeBook = $books[0]['hfb_code_book'] ?? '';
+        $orderDetails .= "<h4 style='margin-top:15px;'>📚 {$className} : {$hfbCodeBook}</h4>";
+        $orderDetails .= "<table border='1' cellpadding='6' cellspacing='0' width='100%' style='border-collapse:collapse;margin-bottom:15px;'>
+                            <tr style='background:#f2f2f2;'>
+                                <th align='left'>Book</th>
+                                <th align='center'>Qty</th>
+                                <th align='right'>Price</th>
+                                <th align='right'>Subtotal</th>
+                            </tr>";
+        $classTotal = 0;
+        foreach ($books as $b) {
+            $subtotal = $b['qty'] * $b['price'];
+            $classTotal += $subtotal;
+            $orderDetails .= "<tr>
+                                <td>{$b['book_name']} : {$b['hfb_code']}</td>
+                                <td align='center'>{$b['qty']}</td>
+                                <td align='right'>" . number_format($b['price'], 2) . "</td>
+                                <td align='right'>" . number_format($subtotal, 2) . "</td>
+                              </tr>";
+        }
+        $orderDetails .= "<tr style='font-weight:bold;background:#f9f9f9;'>
+                            <td colspan='3' align='right'>Class Total</td>
+                            <td align='right'>" . number_format($classTotal, 2) . "</td>
+                          </tr>";
+        $orderDetails .= "</table>";
+    }
+
+    // ✅ Email Setup
+    $email = \Config\Services::email();
+
+    $email->setFrom('johir@pixelbuildbd.com', 'Your Shop Name');
+    $email->setTo('johirulislam6442@gmail.com');
+    $email->setSubject('New Order Received - ' . $customerData['customer_name']);
+
+    $emailMessage = "
+        <h2>🛒 নতুন অর্ডার এসেছে</h2>
+        <p><strong>Customer Name:</strong> {$customerData['customer_name']}</p>
+        <p><strong>Mobile:</strong> {$customerData['customer_mobile']}</p>
+        <p><strong>Address:</strong> {$customerData['customer_address']}</p>
+        {$orderDetails}";
+
+    $email->setMessage($emailMessage);
+
+    if ($email->send()) {
+        return redirect()->to('/thank-you')->with(
+            'success',
+            '<h1>✅ আপনার অর্ডারটি সফলভাবে প্রেরিত হয়েছে। কিছুক্ষণের মধ্যে আপনার সাথে যোগাযোগ করা হবে ইনশাআল্লাহ। প্রয়োজনে যোগাযোগ করুন : 01770800900, 01741476790</h1>'
+        );
+    } else {
+        log_message('error', 'Order email failed: ' . print_r($email->printDebugger(['headers', 'subject']), true));
+        return redirect()->to('/error')->with('error', '❌ অর্ডার সম্পন্ন হয়নি। অনুগ্রহ করে আবার চেষ্টা করুন।');
     }
 }
+ 
 
 
 

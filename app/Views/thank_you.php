@@ -13,5 +13,7 @@
     <?php endif; ?>
 
     <p>আপনার অর্ডার সফলভাবে সম্পন্ন হয়েছে।</p>
+    <a class="btn btn-primary" href="<?= site_url('/') ?>">আরও অর্ডার করুন</a>
+
 </body>
 </html>
