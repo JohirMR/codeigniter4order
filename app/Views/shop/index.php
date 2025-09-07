@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>বই অর্ডার</title>
+<title> হাদীছ ফাউণ্ডেশন শিক্ষাবোর্ড বই অর্ডার</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 <!-- <link href="https://fonts.cdnfonts.com/css/solaimanlipi" rel="stylesheet"> -->
 <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
@@ -13,6 +13,7 @@
  @import url('https://fonts.maateen.me/solaiman-lipi/font.css');
 
 body{
+  margin-top:1rem;
     font-family: 'SolaimanLipi', sans-serif;
 }
 
@@ -26,14 +27,76 @@ body{
 .section-padding{
   padding: 50px;
 }
+.ta_hadis{
+  color:#0C71C3;
+}
 
+.ta-class{
+  color:green;
+  background: #fdd4bd;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.ta_Content_flex{
+  gap:1rem;
+}
+.ta_Content_flex>div:nth-child(2) h5{
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 2.2rem;
+
+}
+
+.ta-subtitle{
+ color: red;
+ font-size: 20px;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+.ta_Content_flex{
+  /* flex-wrap: wrap; */
+  /* justify-content: center !important; */
+   gap:1rem;
+}
+
+.ta_Content_flex>div:nth-child(2) h5{
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 2.2rem;
+}
+
+
+.ta-subtitle{
+ font-size: 14px
+}
+}
 
 
 @media only screen and (max-width: 600px) {
 .ta_Content_flex{
-  flex-wrap: wrap;
-  justify-content: center !important
+
+    gap:1rem;
+
 }
+}
+@media only screen and (max-width: 415px) {
+.ta_Content_flex{
+  gap:1rem;
+}
+.ta_Content_flex>div:nth-child(2) h5{
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.7rem;
+
+}
+
+.ta-subtitle{
+ font-size: 14px
+}
+
 }
 
 
@@ -46,10 +109,10 @@ body{
       <div class="col-md-12">
        <div class="d-flex flex-column text-center">
         <div class=""><a href="<?= site_url('/') ?>">   
-            <img class="img-fluid"  src="<?= site_url('uploads/logo/logo.png')?>" alt="logo">
+            <img class="img-fluid mt-4"  src="<?= site_url('uploads/logo/logo.png')?>" alt="logo">
           </a>
         </div>
-          <h2 class="mt-4 fw-bold">হাদীছ ফাউণ্ডেশন শিক্ষা বোর্ড-এর বই সমূহ অর্ডার করুন</h2>
+          <h2 class="mt-4 fw-bold ta_hadis">হাদীছ ফাউণ্ডেশন শিক্ষা বোর্ড-এর বই সমূহ অর্ডার করুন</h2>
           <p class="fs-4">৫ বা তার বেশি কপি নিলে ২০% ছাড়।</p>
        </div>
       </div>
@@ -79,18 +142,18 @@ body{
       
         <div class="col-md-6">
           <div class="card p-3 h-100">
-            <div class="d-flex justify-content-between ta_Content_flex">
+            <div class="d-flex ta_Content_flex">
               <div class="ta_image"><img class="rounded img-thumbnail" src="<?= site_url( esc($b['image'] ?? 'uploads/no-image.png')) ?>" alt=""></div>
               <div>
                 <h5 class="mb-1"><?= esc($b['name']) ?></h5>
-                <div>মূল্য: 
+                <div class="ta-subtitle">মূল্য: 
                   <strong class="base" data-price="<?= $b['price'] ?>">
                     <?= number_format($b['price'],2) ?>
                   </strong> টাকা
                 </div>
               </div>
               <div style="min-width:150px">
-                <label class="form-label mb-0">কত কপি?</label>
+                <label class="form-label mb-0"  id="ta_num">কত কপি?</label>
                 <input type="number" min="0" value="0" class="form-control qty" 
                   name="items[<?= $b['id'] ?>]">
                 <div class="mt-2">সাবটোটাল: <span class="line-sub">0.00</span></div>
